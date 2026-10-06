@@ -1,0 +1,8 @@
+Live URL (latest anonymous): https://quark-magic-mzhr5.ship.place/
+claim_token: spc_1ud6j6z8ev7pb3obdczeg3e7
+Expires: 2026-11-05
+
+Previous URL (cannot overwrite without ship.page account key): https://jazzy-nigella-i0ulp.ship.place/
+old claim_token: spc_h52wa5r4qms13vt7hkkc7hfv
+
+Source repo: https://github.com/ctramount/imd-dashboard

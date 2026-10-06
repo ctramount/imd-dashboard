@@ -1,0 +1,109 @@
+{
+  "definitions": {
+    "paid": "Job detail paidBy is a non-null 0x wallet (IMD docs: wallet that paid; null when nobody did). No separate on-job payment amount/x402 receipt is exposed on GET /jobs/:id \u2014 paidBy is the proxy.",
+    "non_oracle": "Excludes template skill:oracle-assess (and skill:oracle*). List uses exclude=oracle.",
+    "swarmbrain_excluded": "Jobs whose objective/template contains 'swarmbrain' are excluded from real-demand series as internal cadence.",
+    "simd": "Jobs with 'SIMD' in the objective are included in paid non-oracle totals and also counted in demand_simd_daily.",
+    "concentrated": "Top 2 wallets by all-time paid non-oracle count, plus any wallet with share \u2265 15%.",
+    "concentrated_wallets": [
+      "0x21919137e69ed667ac404c7fcb71b8179b645f46",
+      "0x9fadab91f6fa03dbd7f4f8a08a338704baacf63f"
+    ],
+    "concentrated_abbr": [
+      "0x2191\u20265f46",
+      "0x9fad\u2026f63f"
+    ]
+  },
+  "top10": [
+    {
+      "wallet": "0x9fadab91f6fa03dbd7f4f8a08a338704baacf63f",
+      "abbr": "0x9fad\u2026f63f",
+      "count": 262,
+      "share": 0.2104,
+      "concentrated": true
+    },
+    {
+      "wallet": "0x21919137e69ed667ac404c7fcb71b8179b645f46",
+      "abbr": "0x2191\u20265f46",
+      "count": 194,
+      "share": 0.1558,
+      "concentrated": true
+    },
+    {
+      "wallet": "0x8a3b860f6dbfbbbb07f21905ed8cb0234538bdc8",
+      "abbr": "0x8a3b\u2026bdc8",
+      "count": 184,
+      "share": 0.1478,
+      "concentrated": false
+    },
+    {
+      "wallet": "0x5b95a971b4583a5f011e9da082acdd679b870d06",
+      "abbr": "0x5b95\u20260d06",
+      "count": 42,
+      "share": 0.0337,
+      "concentrated": false
+    },
+    {
+      "wallet": "0x5167d014a056e43883e1bbea5530c3c0dc993281",
+      "abbr": "0x5167\u20263281",
+      "count": 32,
+      "share": 0.0257,
+      "concentrated": false
+    },
+    {
+      "wallet": "0x9f2c2846b5edeeb0f46affd6d86161a053bbd985",
+      "abbr": "0x9f2c\u2026d985",
+      "count": 30,
+      "share": 0.0241,
+      "concentrated": false
+    },
+    {
+      "wallet": "0x69497459b35e1cdc1b90dc3b7a87fe4cf2890345",
+      "abbr": "0x6949\u20260345",
+      "count": 26,
+      "share": 0.0209,
+      "concentrated": false
+    },
+    {
+      "wallet": "0x424f7381b6cfe63963732c52613c87cb54c5c755",
+      "abbr": "0x424f\u2026c755",
+      "count": 25,
+      "share": 0.0201,
+      "concentrated": false
+    },
+    {
+      "wallet": "0xcd5a046e76029fccc360ea842a1c42bc4b302c2f",
+      "abbr": "0xcd5a\u20262c2f",
+      "count": 23,
+      "share": 0.0185,
+      "concentrated": false
+    },
+    {
+      "wallet": "0xa8c4aa8aa2673918605211cad32631aaf3aad0ee",
+      "abbr": "0xa8c4\u2026d0ee",
+      "count": 21,
+      "share": 0.0169,
+      "concentrated": false
+    }
+  ],
+  "counts": {
+    "cache_jobs": 1511,
+    "core_paid_non_oracle": 1245,
+    "core_ex_top": 789,
+    "distinct_payers": 169,
+    "simd_in_core": 232,
+    "swarmbrain_excluded": 59,
+    "unpaid_or_missing_payer": 207,
+    "oracle_skipped_in_cache": 0,
+    "top_wallet_jobs": 456,
+    "top_wallet_share": 0.3663
+  },
+  "last_7d": {
+    "paid_non_oracle": 834,
+    "ex_top": 378,
+    "distinct_payers": 115,
+    "top_share_pct": 54.68,
+    "simd": 232
+  },
+  "as_of": "2026-10-06T13:07:05.341326+00:00"
+}
