@@ -1,17 +1,16 @@
-Stable URL (GitHub Pages — hourly fetch_and_build pushes here): https://ctramount.github.io/imd-dashboard/
+Stable URL (GitHub Pages): https://ctramount.github.io/imd-dashboard/
 Repo: https://github.com/ctramount/imd-dashboard
+Last publish (box local): 2026-10-06 11:19:24 -03
 
+--- prior ship.place notes (anonymous drops are not stably updatable) ---
 Latest anonymous ship.place (one-shot; cannot overwrite without sp_ account key):
 https://pyrite-bougon-f7cwq.ship.place/
 claim_token: spc_hakjw2tiiidn3z8ewl5wiu2a
 Expires: 2026-11-05
-
 Prior anonymous (older segment-less / earlier builds, still live until expiry):
 https://scratch-tip-xui3b.ship.place/
 prior claim_token: spc_au94xc1nh1j3s1wxhkqpncsq
-
 https://quark-magic-mzhr5.ship.place/
 prior claim_token: spc_1ud6j6z8ev7pb3obdczeg3e7
-
 Original URL (cannot overwrite without ship.page account key sp_): https://jazzy-nigella-i0ulp.ship.place/
 old claim_token: spc_h52wa5r4qms13vt7hkkc7hfv
