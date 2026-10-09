@@ -48,7 +48,7 @@
       "wallet": "0x21919137e69ed667ac404c7fcb71b8179b645f46",
       "abbr": "0x2191\u20265f46",
       "count": 1329,
-      "share": 0.4565,
+      "share": 0.4561,
       "concentrated": true,
       "segment": "partner",
       "label": "Identity Units payer"
@@ -56,8 +56,8 @@
     {
       "wallet": "0x9fadab91f6fa03dbd7f4f8a08a338704baacf63f",
       "abbr": "0x9fad\u2026f63f",
-      "count": 374,
-      "share": 0.1285,
+      "count": 377,
+      "share": 0.1294,
       "concentrated": true,
       "segment": "partner",
       "label": "SIMD payer"
@@ -93,7 +93,7 @@
       "wallet": "0xc3f59e5dd9e8d8a74631c0ea68e38fd49ff1b04b",
       "abbr": "0xc3f5\u2026b04b",
       "count": 38,
-      "share": 0.0131,
+      "share": 0.013,
       "concentrated": false,
       "segment": "organic",
       "label": null
@@ -143,7 +143,7 @@
       "label": "Identity Units payer",
       "confidence": "high",
       "jobs": 1329,
-      "share": 0.4408,
+      "share": 0.4404,
       "evidence": "IDENTITY UNITS create/review flood; public @IdentityUnits mint pipeline.",
       "source": "manual"
     },
@@ -153,8 +153,8 @@
       "segment": "partner",
       "label": "SIMD payer",
       "confidence": "high",
-      "jobs": 374,
-      "share": 0.124,
+      "jobs": 377,
+      "share": 0.1249,
       "evidence": "SIMD-tagged jobs; funded by SIMD deployer; IMDJobsPayer refunds.",
       "source": "manual"
     },
@@ -242,7 +242,7 @@
       "label": "auto: partner",
       "confidence": "medium",
       "jobs": 27,
-      "share": 0.009,
+      "share": 0.0089,
       "evidence": "Received IMDJobsPayer refund(s) (SIMD fee subsidy loop).",
       "source": "auto_funder"
     },
@@ -253,7 +253,7 @@
       "label": "auto: partner",
       "confidence": "medium",
       "jobs": 27,
-      "share": 0.009,
+      "share": 0.0089,
       "evidence": "Received IMDJobsPayer refund(s) (SIMD fee subsidy loop).",
       "source": "auto_funder"
     },
@@ -1744,8 +1744,8 @@
         "share": 0.0136
       },
       "partner": {
-        "jobs": 2126,
-        "share": 0.7051
+        "jobs": 2129,
+        "share": 0.7054
       },
       "unclear_bot": {
         "jobs": 187,
@@ -1753,7 +1753,7 @@
       },
       "organic": {
         "jobs": 557,
-        "share": 0.1847
+        "share": 0.1846
       }
     },
     "last_7d": {
@@ -1766,8 +1766,8 @@
         "share": 0.0115
       },
       "partner": {
-        "jobs": 2072,
-        "share": 0.8488
+        "jobs": 2075,
+        "share": 0.849
       },
       "unclear_bot": {
         "jobs": 13,
@@ -1775,42 +1775,42 @@
       },
       "organic": {
         "jobs": 224,
-        "share": 0.0918
+        "share": 0.0917
       }
     },
-    "total_paid_incl_swarm": 3015,
-    "total_paid_7d_incl_swarm": 2441
+    "total_paid_incl_swarm": 3018,
+    "total_paid_7d_incl_swarm": 2444
   },
   "counts": {
-    "cache_jobs": 3233,
-    "core_paid_non_oracle": 2911,
+    "cache_jobs": 3236,
+    "core_paid_non_oracle": 2914,
     "core_ex_top": 1208,
     "distinct_payers": 231,
-    "simd_in_core": 341,
+    "simd_in_core": 344,
     "swarmbrain_excluded": 104,
     "unpaid_or_missing_payer": 218,
     "oracle_skipped_in_cache": 0,
-    "top_wallet_jobs": 1703,
-    "top_wallet_share": 0.585,
-    "paid_incl_swarm": 3015,
+    "top_wallet_jobs": 1706,
+    "top_wallet_share": 0.5854,
+    "paid_incl_swarm": 3018,
     "organic_all": 557,
-    "organic_share": 0.1847,
+    "organic_share": 0.1846,
     "organic_payers": 147,
     "organic_7d": 224,
-    "organic_share_7d": 0.0918,
+    "organic_share_7d": 0.0917,
     "organic_payers_7d": 50,
     "new_organic_payers_week": 32
   },
   "last_7d": {
-    "paid_non_oracle": 2337,
+    "paid_non_oracle": 2340,
     "ex_top": 634,
     "distinct_payers": 134,
-    "top_share_pct": 72.87,
-    "simd": 341,
+    "top_share_pct": 72.91,
+    "simd": 344,
     "organic": 224,
-    "organic_share_pct": 9.18,
+    "organic_share_pct": 9.17,
     "organic_payers": 50,
-    "paid_incl_swarm": 2441
+    "paid_incl_swarm": 2444
   },
-  "as_of": "2026-10-09T12:25:14.230271+00:00"
+  "as_of": "2026-10-09T12:45:58.606670+00:00"
 }
