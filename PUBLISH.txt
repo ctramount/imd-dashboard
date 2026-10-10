@@ -1,6 +1,6 @@
 Stable URL (GitHub Pages): https://ctramount.github.io/imd-dashboard/
 Repo: https://github.com/ctramount/imd-dashboard
-Last publish (box local): 2026-10-10 01:11:49 -03
+Last publish (box local): 2026-10-10 02:09:36 -03
 
 --- prior ship.place notes (anonymous drops are not stably updatable) ---
 Latest anonymous ship.place (one-shot; cannot overwrite without sp_ account key):
