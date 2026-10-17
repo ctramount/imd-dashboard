@@ -425,7 +425,7 @@
       g.scene.userData.bfCore = /^(shoes|body\d)$/.test(t.part);
       frog.add(g.scene);
       if (g.animations && g.animations.length) {
-        const mx = new THREE.AnimationMixer(g.scene); g.animations.forEach((c) => mx.clipAction(c).play()); mixers.push(mx);
+        const mx = new THREE.AnimationMixer(g.scene); const clip = g.animations.find((c) => /idle/i.test(c.name)) || g.animations[0]; mx.clipAction(clip).play(); mixers.push(mx); // idle head-bob only, never walk/jump (matches MML)
       }
     }));
     const failed = results.filter((r) => r.status === 'rejected').length;
