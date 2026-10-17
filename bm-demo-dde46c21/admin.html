@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Team admin (demo)</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #12140f; color: #f3efe4; font: 16px/1.45 ui-sans-serif, system-ui, sans-serif; }
+  main { width: min(640px, calc(100% - 28px)); margin: 0 auto; padding: 20px 0 48px; }
+  h1 { font: 600 32px/1.1 Georgia, serif; margin: 0 0 8px; }
+  h2 { font: 600 22px/1.2 Georgia, serif; margin: 22px 0 8px; }
+  p { color: #b7ad9b; }
+  a { color: #e4b15a; }
+  .tag { display: inline-block; background: #e0a15a; color: #1a1408; font-weight: 700; font-size: 12px; border-radius: 999px; padding: 2px 8px; }
+  .card { background: #1b1d16; border: 1px solid #343228; border-radius: 16px; padding: 14px 16px; margin: 10px 0; }
+  button { min-height: 44px; border-radius: 999px; padding: 10px 14px; font: inherit; font-weight: 650; cursor: pointer; background: transparent; color: #f3efe4; border: 1px solid #343228; margin: 8px 8px 0 0; }
+  .why { color: #ffd2cb; }
+</style>
+</head>
+<body>
+<main>
+  <p class="tag">Team admin (demo)</p>
+  <h1>Operator burns</h1>
+  <p>This page is only for the project team. It is not in the public nav. Nothing here is signed or broadcast. The public app shows Open, then Closed: awaiting burn, then Burned.</p>
+  <p class="why">Burning the parent locks the supply: once it is burned, no one (including you) can ever mint more from this collection.</p>
+  <h2>Closed: awaiting burn</h2>
+  <article class="card">
+    <h2>Harbor</h2>
+    <p>Closed: awaiting burn. The parent is in the project wallet.</p>
+    <p>Mint closed. Supply will be locked at 12 when the parent is burned.</p>
+    <p>Signing summary: output 0 burns the parent. The full parent value goes to the unspendable P2WSH. The witness script is OP_RETURN plus the bytes bitmap-mint-closed. That output cannot be spent.</p>
+    <button type="button" onclick="opBurn('build')">Build burn</button>
+    <button type="button" onclick="opBurn('sign')">Sign burn</button>
+    <button type="button" onclick="opBurn('broadcast')">Broadcast burn</button>
+    <p id="opnote"></p>
+  </article>
+  <h2>Burn history</h2>
+  <article class="card">
+    <h2>Ember Archive</h2>
+    <p>Burned</p>
+    <p>Supply locked at 40.</p>
+    <p>burn txid aa8181230111d8f4b43864db69a9398d167db4c27ff74744b1607e37580a164e</p>
+  </article>
+  <p><a href="index.html">Public demo</a></p>
+</main>
+<script>
+function opBurn(step) {
+  var note = document.getElementById("opnote");
+  if (!note) return;
+  if (step === "build") note.textContent = "Unsigned burn built for review. Nothing was signed or broadcast.";
+  else if (step === "sign") note.textContent = "Burn signed. Nothing was broadcast.";
+  else note.textContent = "Burn broadcast. Status is Burned.";
+}
+</script>
+</body>
+</html>
