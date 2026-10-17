@@ -1,0 +1,3 @@
+- three.js r178 (`lib/three.*.min.js`, `lib/bf-gltf-meshopt-env.r178.min.js`) and three.js r182 (inside `mml-client.min.js`): MIT, © 2010-2025 three.js authors.
+- @mml-io/mml-web, @mml-io/mml-web-threejs, @mml-io/mml-web-threejs-standalone, @mml-io/model-loader 0.26.1 (inside `mml-client.min.js`): MIT, © Improbable MV Limited.
+- meshoptimizer decoder: MIT, © Arseny Kapoulkine. parse5 / entities (bundled by mml-web): MIT / BSD-2-Clause.
