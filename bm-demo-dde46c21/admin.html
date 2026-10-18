@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="noindex,nofollow">
 <title>Team admin (demo)</title>
 <style>
   * { box-sizing: border-box; }
@@ -17,17 +17,23 @@
   .card { background: #1b1d16; border: 1px solid #343228; border-radius: 16px; padding: 14px 16px; margin: 10px 0; }
   button { min-height: 44px; border-radius: 999px; padding: 10px 14px; font: inherit; font-weight: 650; cursor: pointer; background: transparent; color: #f3efe4; border: 1px solid #343228; margin: 8px 8px 0 0; }
   .why { color: #ffd2cb; }
+  p, code { overflow-wrap: anywhere; }
+  code { font-family: ui-monospace, monospace; }
+  .sampletag { display: inline-block; vertical-align: middle; font: 700 11px/1 ui-sans-serif, system-ui, sans-serif; letter-spacing: .06em; text-transform: uppercase; color: #12140f; background: #e0c36a; border-radius: 6px; padding: 3px 6px; margin-left: 6px; }
+  .sample { color: #e8e3d8; }
 </style>
 </head>
 <body>
 <main>
   <p class="tag">Team admin (demo)</p>
   <h1>Operator burns</h1>
+  <p class="sample">Sample data: every collection, height, id and transaction on this page is made up and does not exist on any network.</p>
   <p>This page is only for the project team. It is not in the public nav. Nothing here is signed or broadcast. The public app shows Open, then Closed: awaiting burn, then Burned.</p>
   <p class="why">Burning the parent locks the supply: once it is burned, no one (including you) can ever mint more from this collection.</p>
   <h2>Closed: awaiting burn</h2>
   <article class="card">
-    <h2>Harbor</h2>
+    <h2>Harbor <span class="sampletag">Sample</span></h2>
+    <p>Parent 89700091.bitmap. Window closed after block 89,916,980.</p>
     <p>Closed: awaiting burn. The parent is in the project wallet.</p>
     <p>Mint closed. Supply will be locked at 12 when the parent is burned.</p>
     <p>Signing summary: output 0 burns the parent. The full parent value goes to the unspendable P2WSH. The witness script is OP_RETURN plus the bytes bitmap-mint-closed. That output cannot be spent.</p>
@@ -38,10 +44,10 @@
   </article>
   <h2>Burn history</h2>
   <article class="card">
-    <h2>Ember Archive</h2>
-    <p>Burned</p>
+    <h2>Ember Archive <span class="sampletag">Sample</span></h2>
+    <p>Burned in block 89,916,840. Parent 89777777.bitmap.</p>
     <p>Supply locked at 40.</p>
-    <p>burn txid aa8181230111d8f4b43864db69a9398d167db4c27ff74744b1607e37580a164e</p>
+    <p>Sample burn tx (not a real transaction) <code title="sample-89acb5c7a23ef6bd3960d2da5141697a07c39aaa4b7dda159b5ba6db3">sample-8…b5ba6db3</code> <button type="button" onclick="try{navigator.clipboard.writeText('sample-89acb5c7a23ef6bd3960d2da5141697a07c39aaa4b7dda159b5ba6db3')}catch(e){}this.textContent='Copied'">Copy</button></p>
   </article>
   <p><a href="index.html">Public demo</a></p>
 </main>
