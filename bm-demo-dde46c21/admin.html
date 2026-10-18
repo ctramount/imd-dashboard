@@ -21,6 +21,13 @@
   code { font-family: ui-monospace, monospace; }
   .sampletag { display: inline-block; vertical-align: middle; font: 700 11px/1 ui-sans-serif, system-ui, sans-serif; letter-spacing: .06em; text-transform: uppercase; color: #12140f; background: #e0c36a; border-radius: 6px; padding: 3px 6px; margin-left: 6px; }
   .sample { color: #e8e3d8; }
+  button:disabled { opacity: .45; cursor: not-allowed; border-style: dashed; }
+  .phase { display: inline-block; margin: 4px 0; padding: 3px 10px; border-radius: 999px; border: 1px solid #7a6a3a; color: #f0d79a; background: #2a2414; font-size: 14px; font-weight: 650; }
+  .gate { color: #f0d79a; }
+  .ok, .err { border-radius: 10px; padding: 8px 10px; }
+  .ok { color: #c9f2c0; background: #15301a; border: 1px solid #3f8a4a; }
+  .err { color: #ffb4a8; background: #3a1512; border: 1px solid #d4564a; }
+  #opnote:empty { display: none; }
 </style>
 </head>
 <body>
@@ -28,8 +35,17 @@
   <p class="tag">Team admin (demo)</p>
   <h1>Operator burns</h1>
   <p class="sample">Sample data: every collection, height, id and transaction on this page is made up and does not exist on any network.</p>
-  <p>This page is only for the project team. It is not in the public nav. Nothing here is signed or broadcast. The public app shows Open, then Closed: awaiting burn, then Burned.</p>
+  <p>This page is only for the project team. It is not in the public nav. Nothing here is signed or broadcast. The public app shows Open, then Closed: burn available at block X for the one block before the burn is valid, then Closed: awaiting burn, then Burned. Build, Sign and Broadcast stay disabled until the burn height.</p>
   <p class="why">Burning the parent locks the supply: once it is burned, no one (including you) can ever mint more from this collection.</p>
+  <h2>Closed: burn not available yet</h2>
+  <article class="card">
+    <h2>Tide Glass <span class="sampletag">Sample</span></h2>
+    <p class="phase">Closed: burn available at block 89,917,001</p>
+    <p class="gate">The mint window closed at block 89,917,000. The burn is valid from block 89,917,001: 1 more block (tip 89,917,000). Build, Sign and Broadcast unlock at block 89,917,001.</p>
+    <button type="button" disabled aria-disabled="true" title="Burn available at block 89,917,001 (1 more block)">Build burn</button>
+    <button type="button" disabled aria-disabled="true" title="Burn available at block 89,917,001 (1 more block)">Sign burn</button>
+    <button type="button" disabled aria-disabled="true" title="Burn available at block 89,917,001 (1 more block)">Broadcast burn</button>
+  </article>
   <h2>Closed: awaiting burn</h2>
   <article class="card">
     <h2>Harbor <span class="sampletag">Sample</span></h2>
@@ -55,6 +71,8 @@
 function opBurn(step) {
   var note = document.getElementById("opnote");
   if (!note) return;
+  note.className = "ok";
+  note.removeAttribute("role");
   if (step === "build") note.textContent = "Unsigned burn built for review. Nothing was signed or broadcast.";
   else if (step === "sign") note.textContent = "Burn signed. Nothing was broadcast.";
   else note.textContent = "Burn broadcast. Status is Burned.";
