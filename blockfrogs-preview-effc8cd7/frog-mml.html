@@ -257,6 +257,9 @@
     return out;
   };
 
+  /** Default camera of the standalone three.js view (see renderThree). Kept in this section so the preview MML host can read the same values. */
+  const CAM = { fov: 35, theta: 0.6, phi: 1.2, dist: 5.3, lift: 0.25, minAspect: 1.25 };
+
   /* ======================= RECURSIVE HELPERS ======================= */
   const content = (/** @type {string} */ id) => `/content/${id}`;
   const getJSON = async (/** @type {string} */ u) => { const r = await fetch(u); if (!r.ok) throw new Error(`${u} -> ${r.status}`); return r.json(); };
@@ -432,25 +435,29 @@
     const failed = results.filter((r) => r.status === 'rejected').length;
     if (!frog.children.length) throw new Error(`No GLB could be loaded (${failed} failed, ${missing.length} not inscribed yet: ${missing.join(', ')})`);
 
-    // Frame the stack on the always-present parts (shoes + bodies) in their posed (animated, skinned) state.
+    // Measure the always-present parts (shoes + bodies) in their posed (animated, skinned) state.
     mixers.forEach((m) => m.update(0)); frog.updateMatrixWorld(true);
+    frog.traverse((o) => { if (o.isSkinnedMesh) { o.skeleton.update(); o.computeBoundingBox(); o.computeBoundingSphere(); } }); // culling volumes from the posed skeleton
     const box = new THREE.Box3();
     const core = frog.children.filter((c) => c.userData.bfCore);
-    (core.length ? core : frog.children).forEach((c) => {
-      c.traverse((o) => { if (o.isSkinnedMesh) { o.skeleton.update(); o.computeBoundingBox(); o.computeBoundingSphere(); } });
-      box.expandByObject(c, true);
-    });
-    const size = box.getSize(new THREE.Vector3()); const center = box.getCenter(new THREE.Vector3());
+    (core.length ? core : frog.children).forEach((c) => box.expandByObject(c, true));
+    // FIXED camera, the same for every height: frame that core box as it would sit at the LARGEST size tier (group scale + y),
+    // so a smaller tier really looks smaller (an auto-fit would normalise every frog to the same on-screen size).
+    const big = SIZE_TIERS.reduce((a, t) => (Number(t[1]) > Number(a[1]) ? t : a)); const k = Number(big[1]) / Number(scale);
+    const size = box.getSize(new THREE.Vector3()).multiplyScalar(k);
+    const center = box.getCenter(new THREE.Vector3()); center.set(center.x * k, (center.y - Number(y)) * k + Number(big[2]), center.z * k);
     const radius = Math.max(size.x, size.y, size.z) * 0.5 || 1;
-    const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, radius / 100, radius * 100);
+    center.y += radius * CAM.lift; // headroom for hats, halo and the UFO on the largest tier
+    const camera = new THREE.PerspectiveCamera(CAM.fov, window.innerWidth / window.innerHeight, radius / 100, radius * 100);
     // Minimal orbit (drag = rotate, wheel/pinch = zoom, idle = slow auto-rotate). No OrbitControls inscription needed.
-    let theta = 0.6, phi = 1.2, dist = radius * 5.2, drag = null, idle = 0;
-    const place = () => { camera.position.set(center.x + dist * Math.sin(phi) * Math.sin(theta), center.y + dist * Math.cos(phi), center.z + dist * Math.sin(phi) * Math.cos(theta)); camera.lookAt(center); };
+    let theta = CAM.theta, phi = CAM.phi, dist = radius * CAM.dist, drag = null, idle = 0;
+    const place = () => { const d = dist * Math.max(1, CAM.minAspect / camera.aspect); // portrait windows: back off so the width fits too
+      camera.position.set(center.x + d * Math.sin(phi) * Math.sin(theta), center.y + d * Math.cos(phi), center.z + d * Math.sin(phi) * Math.cos(theta)); camera.lookAt(center); };
     const cv = renderer.domElement;
     cv.addEventListener('pointerdown', (e) => { drag = { x: e.clientX, y: e.clientY }; cv.setPointerCapture(e.pointerId); });
     cv.addEventListener('pointermove', (e) => { if (!drag) return; theta -= (e.clientX - drag.x) * 0.008; phi = Math.min(2.9, Math.max(0.2, phi - (e.clientY - drag.y) * 0.008)); drag = { x: e.clientX, y: e.clientY }; idle = 0; });
     cv.addEventListener('pointerup', () => { drag = null; });
-    cv.addEventListener('wheel', (e) => { e.preventDefault(); dist = Math.min(radius * 12, Math.max(radius * 1.2, dist * (1 + Math.sign(e.deltaY) * 0.1))); }, { passive: false });
+    cv.addEventListener('wheel', (e) => { e.preventDefault(); dist = Math.min(radius * 12, Math.max(radius * 0.6, dist * (1 + Math.sign(e.deltaY) * 0.1))); }, { passive: false });
     window.addEventListener('resize', () => { renderer.setSize(window.innerWidth, window.innerHeight); camera.aspect = window.innerWidth / window.innerHeight; camera.updateProjectionMatrix(); });
 
     const clock = new THREE.Clock();
@@ -466,7 +473,8 @@
     if (VALIDITY.state === 'duplicate' || VALIDITY.state === 'invalid') badge.style.color = '#ff8a7a';
     document.body.appendChild(badge);
     document.title = `BlockFrogs · ${blockHeight}.bitmap`;
-    window.__bf = { blockHeight, traits: traits.map((t) => t.part + (t.color ? `_${t.color}` : '')), loaded: frog.children.length, missing, failed, validity: VALIDITY };
+    window.__bf = { blockHeight, traits: traits.map((t) => t.part + (t.color ? `_${t.color}` : '')), loaded: frog.children.length, missing, failed, validity: VALIDITY,
+      size: { scale, y }, coreBox: [...box.min.toArray(), ...box.max.toArray()], view: { center: center.toArray(), radius, dist, theta: CAM.theta, phi: CAM.phi, fov: CAM.fov } };
   };
 
   /* ======================= BOOT ======================= */

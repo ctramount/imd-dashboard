@@ -51,7 +51,7 @@
   const tierSel = el('select', { id: 'tier', onchange: () => { state.tier = tierSel.value; touched(); } }, el('option', { value: '' }, 'auto (from height)'),
     E.SIZE_TIERS.map((t, i) => el('option', { value: String(i) }, `tier ${i}: ${tierLabel(i)}`)));
   tg.append(el('div', { class: 'tg' }, el('h3', {}, 'Size tier (group sx/sy/sz + y)'), tierSel,
-    el('p', { class: 'hint' }, 'The tier is the m-group scale. The three.js view re-frames the camera on the frog, so it looks the same size there. In the MML view, compare it with the 1.8 m pole.')));
+    el('p', { class: 'hint' }, 'The tier is the m-group scale (sx/sy/sz) and y offset. Both views use the same fixed default camera for every height (framed for the largest tier), so a smaller tier really looks smaller. In the MML view the 1.8 m pole gives a scale reference.')));
   const setMode = (m) => { document.querySelector(`input[name=mode][value=${m}]`).checked = true; };
   const mode = () => document.querySelector('input[name=mode]:checked').value;
   function touched() { setMode('custom'); schedule(); }
