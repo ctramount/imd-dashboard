@@ -48,7 +48,7 @@
       "wallet": "0x21919137e69ed667ac404c7fcb71b8179b645f46",
       "abbr": "0x2191\u20265f46",
       "count": 1550,
-      "share": 0.3107,
+      "share": 0.3106,
       "concentrated": true,
       "segment": "partner",
       "label": "Identity Units payer"
@@ -65,8 +65,8 @@
     {
       "wallet": "0xc94400e90bb652afa02740bff50824e14069c133",
       "abbr": "0xc944\u2026c133",
-      "count": 204,
-      "share": 0.0409,
+      "count": 205,
+      "share": 0.0411,
       "concentrated": false,
       "segment": "partner",
       "label": "auto: partner"
@@ -101,8 +101,8 @@
     {
       "wallet": "0xca182aa19dde767ab809e0a4cc9fc1860be03d36",
       "abbr": "0xca18\u20263d36",
-      "count": 96,
-      "share": 0.0192,
+      "count": 98,
+      "share": 0.0196,
       "concentrated": false,
       "segment": "organic",
       "label": null
@@ -143,7 +143,7 @@
       "label": "Identity Units payer",
       "confidence": "high",
       "jobs": 1550,
-      "share": 0.3025,
+      "share": 0.3023,
       "evidence": "IDENTITY UNITS create/review flood; public @IdentityUnits mint pipeline.",
       "source": "manual"
     },
@@ -164,8 +164,8 @@
       "segment": "partner",
       "label": "auto: partner",
       "confidence": "medium",
-      "jobs": 204,
-      "share": 0.0398,
+      "jobs": 205,
+      "share": 0.04,
       "evidence": "Received IMDJobsPayer refund(s) (SIMD fee subsidy loop).",
       "source": "auto_funder"
     },
@@ -176,7 +176,7 @@
       "label": "auto: partner",
       "confidence": "medium",
       "jobs": 194,
-      "share": 0.0379,
+      "share": 0.0378,
       "evidence": "Received IMDJobsPayer refund(s) (SIMD fee subsidy loop).",
       "source": "auto_funder"
     },
@@ -2694,73 +2694,73 @@
         "share": 0.0115
       },
       "partner": {
-        "jobs": 3347,
-        "share": 0.6532
+        "jobs": 3348,
+        "share": 0.653
       },
       "unclear_bot": {
         "jobs": 190,
         "share": 0.0371
       },
       "organic": {
-        "jobs": 1392,
-        "share": 0.2717
+        "jobs": 1394,
+        "share": 0.2719
       }
     },
     "last_7d": {
       "team": {
         "jobs": 18,
-        "share": 0.0138
+        "share": 0.0137
       },
       "team_adjacent": {
         "jobs": 14,
         "share": 0.0107
       },
       "partner": {
-        "jobs": 523,
-        "share": 0.3998
+        "jobs": 524,
+        "share": 0.3997
       },
       "unclear_bot": {
         "jobs": 3,
         "share": 0.0023
       },
       "organic": {
-        "jobs": 750,
-        "share": 0.5734
+        "jobs": 752,
+        "share": 0.5736
       }
     },
-    "total_paid_incl_swarm": 5124,
-    "total_paid_7d_incl_swarm": 1308
+    "total_paid_incl_swarm": 5127,
+    "total_paid_7d_incl_swarm": 1311
   },
   "counts": {
-    "cache_jobs": 5608,
-    "core_paid_non_oracle": 4988,
-    "core_ex_top": 2973,
+    "cache_jobs": 5612,
+    "core_paid_non_oracle": 4991,
+    "core_ex_top": 2976,
     "distinct_payers": 383,
     "simd_in_core": 415,
     "swarmbrain_excluded": 138,
-    "unpaid_or_missing_payer": 484,
+    "unpaid_or_missing_payer": 485,
     "oracle_skipped_in_cache": 0,
     "top_wallet_jobs": 2015,
-    "top_wallet_share": 0.404,
-    "paid_incl_swarm": 5124,
-    "organic_all": 1392,
-    "organic_share": 0.2717,
+    "top_wallet_share": 0.4037,
+    "paid_incl_swarm": 5127,
+    "organic_all": 1394,
+    "organic_share": 0.2719,
     "organic_payers": 249,
-    "organic_7d": 750,
-    "organic_share_7d": 0.5734,
+    "organic_7d": 752,
+    "organic_share_7d": 0.5736,
     "organic_payers_7d": 118,
     "new_organic_payers_week": 10
   },
   "last_7d": {
-    "paid_non_oracle": 1290,
-    "ex_top": 1245,
+    "paid_non_oracle": 1293,
+    "ex_top": 1248,
     "distinct_payers": 164,
-    "top_share_pct": 3.49,
+    "top_share_pct": 3.48,
     "simd": 29,
-    "organic": 750,
-    "organic_share_pct": 57.34,
+    "organic": 752,
+    "organic_share_pct": 57.36,
     "organic_payers": 118,
-    "paid_incl_swarm": 1308
+    "paid_incl_swarm": 1311
   },
-  "as_of": "2026-10-19T22:12:00.037117+00:00"
+  "as_of": "2026-10-19T23:11:59.233120+00:00"
 }
