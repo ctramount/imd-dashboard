@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Team admin · Bitmap City demo</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0d0e0c; color: #f2eee5; font: 16px/1.45 ui-sans-serif, system-ui, sans-serif; }
+  main { width: min(640px, calc(100% - 28px)); margin: 0 auto; padding: 20px 0 48px; }
+  h1 { font: 700 30px/1.15 system-ui, sans-serif; margin: 0 0 8px; }
+  h2 { font: 700 20px/1.25 system-ui, sans-serif; margin: 22px 0 8px; }
+  p { color: #b7ad9b; }
+  a { color: #e4b15a; }
+  .tag { display: inline-block; background: #e0a15a; color: #1a1408; font-weight: 700; font-size: 12px; border-radius: 999px; padding: 2px 8px; }
+  .card { background: #1b1d16; border: 1px solid #343228; border-radius: 16px; padding: 14px 16px; margin: 10px 0; }
+  button { white-space: nowrap; flex-shrink: 0; min-height: 44px; border-radius: 999px; padding: 10px 14px; font: inherit; font-weight: 650; cursor: pointer; background: transparent; color: #f3efe4; border: 1px solid #343228; margin: 8px 8px 0 0; }
+  .why { color: #ffd2cb; }
+  p, code { overflow-wrap: anywhere; }
+  code { font-family: ui-monospace, monospace; }
+  .sampletag { display: inline-block; vertical-align: middle; font: 700 11px/1 ui-sans-serif, system-ui, sans-serif; letter-spacing: .06em; text-transform: uppercase; color: #12140f; background: #e0c36a; border-radius: 6px; padding: 3px 6px; margin-left: 6px; }
+  .sample { color: #e8e3d8; }
+  button:focus-visible { outline: 2px solid #f7931a; outline-offset: 2px; }
+  button:disabled { opacity: .45; cursor: not-allowed; border-style: dashed; }
+  .phase { display: inline-block; margin: 4px 0; padding: 3px 10px; border-radius: 999px; border: 1px solid #7a6a3a; color: #f0d79a; background: #2a2414; font-size: 14px; font-weight: 650; }
+  .gate { color: #f0d79a; }
+  .ok, .err { border-radius: 10px; padding: 8px 10px; }
+  .ok { color: #c9f2c0; background: #15301a; border: 1px solid #3f8a4a; }
+  .err { color: #ffb4a8; background: #3a1512; border: 1px solid #d4564a; }
+  #opnote:empty { display: none; }
+</style>
+</head>
+<body>
+<main>
+  <p class="tag">Team admin (demo)</p>
+  <h1>Operator burns</h1>
+  <p class="sample">Sample data: every collection, height, id and transaction on this page is made up and does not exist on any network.</p>
+  <p>This page is only for the project team. It is not in the public nav. Nothing here is signed or broadcast. The public app shows Open, then Closed: burn available at block X for the one block before the burn is valid, then Closed: awaiting burn, then Burned. Build, Sign and Broadcast stay disabled until the burn height.</p>
+  <p class="why">Burning the parent locks the supply: once it is burned, no one, not even the creator, can ever mint more from this collection.</p>
+  <h2>Waiting for the burn height</h2>
+  <article class="card">
+    <h2>Tide Glass <span class="sampletag">Sample</span></h2>
+    <p class="phase">Closed: burn available at block 89,917,001</p>
+    <p class="gate">The mint window closed at block 89,917,000. The burn is valid from block 89,917,001: 1 more block (tip 89,917,000). Build, Sign and Broadcast unlock at block 89,917,001.</p>
+    <button type="button" disabled aria-disabled="true" title="Burn available at block 89,917,001 (1 more block)">Build burn</button>
+    <button type="button" disabled aria-disabled="true" title="Burn available at block 89,917,001 (1 more block)">Sign burn</button>
+    <button type="button" disabled aria-disabled="true" title="Burn available at block 89,917,001 (1 more block)">Broadcast burn</button>
+  </article>
+  <h2>Closed: awaiting burn</h2>
+  <article class="card">
+    <h2>Harbor <span class="sampletag">Sample</span></h2>
+    <p>Parent 89700091.bitmap. Window closed after block 89,916,980.</p>
+    <p>Closed: awaiting burn. The parent is in the project wallet.</p>
+    <p>Mint closed. Supply will be locked at 12 when the parent is burned.</p>
+    <p>Signing summary: output 0 burns the parent. The full parent value goes to an OP_RETURN output with the data bitmap-mint-closed. That output cannot be spent, and ord marks the parent burned.</p>
+    <button type="button" onclick="opBurn('build')">Build burn</button>
+    <button type="button" onclick="opBurn('sign')">Sign burn</button>
+    <button type="button" onclick="opBurn('broadcast')">Broadcast burn</button>
+    <p id="opnote"></p>
+  </article>
+  <h2>Burn history</h2>
+  <article class="card">
+    <h2>Ember Archive <span class="sampletag">Sample</span></h2>
+    <p>Burned in block 89,916,840. Parent 89777777.bitmap.</p>
+    <p>Supply locked at 40.</p>
+    <p>Sample burn tx (not a real transaction) <code title="sample-89acb5c7a23ef6bd3960d2da5141697a07c39aaa4b7dda159b5ba6db3">sample-8…b5ba6db3</code> <button type="button" onclick="try{navigator.clipboard.writeText('sample-89acb5c7a23ef6bd3960d2da5141697a07c39aaa4b7dda159b5ba6db3')}catch(e){}this.textContent='Copied'">Copy</button></p>
+  </article>
+  <h2>E3 launches</h2>
+  <p>Verdicts from the index (the authority). LiveOCI cross-check: sample data, not a real check.</p>
+  <article class="card">
+    <h2>Block Gardens <span class="sampletag">Sample</span></h2>
+    <p class="phase">Open</p>
+    <p>Traits · 2 per Bitmap · blocks 0 up · tag <code>BM1a3f09c2e71</code></p>
+    <p>Official 6 · not official 2 (DUPLICATE 1, BITMAP_DUPLICATE 1)</p>
+    <p>Close height in master: empty (the burn is the supply lock)</p>
+    <p class="ok">Fee address is separate from the parent address.</p>
+  </article>
+  <p><a href="index.html">Public demo</a></p>
+</main>
+<script>
+function opBurn(step) {
+  var note = document.getElementById("opnote");
+  if (!note) return;
+  note.className = "ok";
+  note.removeAttribute("role");
+  if (step === "build") note.textContent = "Unsigned burn built for review. Nothing was signed or broadcast.";
+  else if (step === "sign") note.textContent = "Burn signed. Nothing was broadcast.";
+  else note.textContent = "Burn broadcast. Status is Burned.";
+}
+</script>
+</body>
+</html>
