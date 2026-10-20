@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BlockFrogs preview · v3.3 renderer</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="preview.css">
+</head>
+<body>
+<header>
+  <h1>🐸 BlockFrogs preview <small>Blockfrogs v3.3 renderer (3.3.0, E3 delegate master) · nothing is inscribed</small></h1>
+  <p class="lede">Type Bitmap block heights, then press Render. Every v3.3 trait comes from the block height alone. Each frog is drawn by the real <code>blockfrogs-child.v3.3.html</code> master (a PREVIEW build of it, using its own <code>?h=</code> override) in two hosts: a plain browser, which runs its own three.js view, and the official MML web client, which runs its MML path.</p>
+</header>
+<main>
+<form id="ctl" autocomplete="off">
+  <section class="box">
+    <label for="heights" class="big">Block height(s)</label>
+    <div class="row">
+      <input id="heights" name="heights" inputmode="numeric" placeholder="e.g. 314, 12321, 840000" value="12321">
+      <button id="go" type="submit">Render</button>
+    </div>
+    <div class="chips" id="examples">
+      <button type="button" data-h="314">314 UFO</button><button type="button" data-h="420">420 joint</button>
+      <button type="button" data-h="888">888 chain</button><button type="button" data-h="100">100 laser</button>
+      <button type="button" data-h="300">300 Dorian</button><button type="button" data-h="121">121 halo</button>
+      <button type="button" data-h="12321">12321 wings+halo</button><button type="button" data-h="63">63 socks+shades</button>
+      <button type="button" data-h="3243">3243 hat+Trump</button><button type="button" data-h="441500">441500 Hairpepe</button>
+      <button type="button" data-h="324300">324300 demo</button><button type="button" data-h="tip">latest</button>
+      <button type="button" data-h="314,420,888,100,300,121">specials ×6</button>
+    </div>
+    <p class="hint">Up to 6 heights, comma- or space-separated. Each frog uses 2 WebGL views.</p>
+  </section>
+
+  <details class="box sec" open>
+    <summary><h2>Block data <small>(info only)</small></h2></summary>
+    <label>Source
+      <select id="source"><option value="auto">Auto: ordinals.com recursive, mempool.space fallback</option>
+        <option value="ord">ordinals.com only (/r/blockheight, /r/blockinfo)</option><option value="mempool">mempool.space only (/api/block-height, /api/block)</option></select>
+    </label>
+    <p class="hint">v3.3 derives <b>every</b> trait from the Bitmap height N (body layers from its digits, special traits from divisibility, palindromes, squares and digit strings), so nothing depends on a block hash and there is no confirmation-hash input any more. Block data is shown for context and used for the tip ("latest", future-block check).</p>
+  </details>
+
+  <details class="box sec" open>
+    <summary><h2>Traits</h2></summary>
+    <div class="mode">
+      <label><input type="radio" name="mode" value="auto" checked> <b>Auto (derive from height)</b>: no overrides, the true renderer result</label>
+      <label><input type="radio" name="mode" value="custom"> <b>Custom overrides</b></label>
+    </div>
+    <p class="hint">Click a box to cycle it: <span class="tri auto">–</span> auto (from the height), <span class="tri on">✓</span> forced on, <span class="tri off">✕</span> forced off. Changing anything switches to Custom.</p>
+    <div id="traitgroups"></div>
+    <button type="button" id="resetov" class="ghost">Reset all overrides to auto</button>
+  </details>
+
+  <details class="box sec" open>
+    <summary><h2>Viewer options <small>(not traits)</small></h2></summary>
+    <label class="opt"><input type="checkbox" id="anim" checked> Play GLB animations (three.js mixers / MML <code>anim</code>)</label>
+    <label class="opt"><input type="checkbox" id="spin" checked> Auto-rotate camera</label>
+    <label class="opt"><input type="checkbox" id="host" checked> MML host world: 3 <code>m-light</code>s, a ground <code>m-plane</code> and a 1.8 m reference pole. The bare MML client has no lights, so without these the frog is unlit.</label>
+  </details>
+</form>
+
+<div id="out"></div>
+<a id="totop" href="#ctl">↑ Edit heights / traits</a>
+</main>
+<footer>
+  <p>Local preview only. Block data is fetched live from ordinals.com or mempool.space (both send <code>Access-Control-Allow-Origin: *</code>). Renderer: <code>blockfrogs-child.v3.3.html</code> (v3.3.0) with 7 marked <code>/*PREVIEW HOOK*/</code> lines (5 hook points) plus <code>PREVIEW = true</code>; its trait, mint-rule and validation code is byte-identical to the source. Models come from <code>glb/</code> (the 63 <code>glb-min</code> files; every v3.3 part has a model) through preview inscription ids (<code>ids-map.json</code>). Mint validation (parents, CBOR metadata, collection parent) does not run in preview mode. three.js is r178 from <code>lib/</code>. The MML client is <code>mml-client.min.js</code>, built from @mml-io/mml-web 0.26.1. No CDN is used.</p>
+</footer>
+<script src="overrides.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
