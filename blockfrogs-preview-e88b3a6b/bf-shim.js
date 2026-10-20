@@ -17,6 +17,36 @@
     size(s) { P.sizeAuto = s; return ov.mode === 'custom' && ov.size ? { scale: String(ov.size.scale), y: String(ov.size.y) } : s; },
     dt(d) { return ov.anim === false ? 0 : d; },
     spin() { return ov.spin !== false; },
+    // ---- Size QA: fixed camera (preview only; ov.fixedCam, default ON). Off = the v3.3 renderer's own fit-to-frog camera. ----
+    fixedCam() { return ov.fixedCam !== false; },
+    /** The renderer's own SIZE_TIERS / getSize (its TRAIT DERIVATION section, byte-checked by src/build.mjs). */
+    engine() {
+      if (P._E) return P._E;
+      const src = [...document.scripts].map((x) => x.textContent).find((t) => t.includes('/* ======================= TRAIT DERIVATION'));
+      const A = src.indexOf('/* ======================= TRAIT DERIVATION'), B = src.indexOf('/* ======================= RECURSIVE HELPERS');
+      return (P._E = new Function(src.slice(A, B) + '\nreturn { SIZE_TIERS, getSize };')());
+    },
+    /** v2 framing: the core box (shoes + bodies, world coords at scale s / y offset y) mapped to the LARGEST size tier.
+     *  -> { center:[x,y,z], radius } for a camera that uses v3.3's fit (radius * 1.02 / sin(fov/2), FOV 35).
+     *  lift 0.25 and pad 1.5625 reproduce v2's CAM (dist 5.3 x half the largest core dimension, headroom 0.25) under that fit. */
+    FIX: { lift: 0.25, pad: 5.3 / (1.02 / Math.sin(35 * Math.PI / 360)) },
+    fixedFrame(min, max, s, y) {
+      const big = P.engine().SIZE_TIERS.reduce((a, t) => (Number(t[1]) > Number(a[1]) ? t : a));
+      const k = Number(big[1]) / Number(s), Y = Number(big[2]);
+      const lo = [min[0] * k, (min[1] - y) * k + Y, min[2] * k], hi = [max[0] * k, (max[1] - y) * k + Y, max[2] * k];
+      const r = Math.max(hi[0] - lo[0], hi[1] - lo[1], hi[2] - lo[2]) * 0.5 || 1;
+      const center = [(lo[0] + hi[0]) / 2, (lo[1] + hi[1]) / 2 + r * P.FIX.lift, (lo[2] + hi[2]) / 2];
+      return { center, radius: r * P.FIX.pad, bigScale: Number(big[1]) };
+    },
+    /** three.js view hook: identity when the fixed camera is off. */
+    cam(center, radius, frog, THREE) {
+      const core = new THREE.Box3(); frog.children.filter((c) => c.userData.bfCore).forEach((c) => core.expandByObject(c, true));
+      P.coreHeight = core.isEmpty() ? null : core.max.y - core.min.y;
+      if (!P.fixedCam() || core.isEmpty()) { P.camMode = 'fit'; return radius; }
+      const f = P.fixedFrame(core.min.toArray(), core.max.toArray(), frog.scale.y, frog.position.y);
+      center.set(f.center[0], f.center[1], f.center[2]); P.camMode = 'fixed'; P.camInfo = f;
+      return f.radius;
+    },
     applied(h, traits) {
       const g = document.getElementById('group');
       P.snapshot = g ? g.outerHTML : null; // the MML exactly as the renderer's applyMML() left it

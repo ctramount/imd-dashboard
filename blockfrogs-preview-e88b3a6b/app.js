@@ -12,6 +12,7 @@
   if (A < 0 || B < 0) throw new Error('trait section not found in frog-three.html');
   const E = new Function(frogSrc.slice(A, B) + '\nreturn { COLORS, BITMAP_BLOCKOUT_HEIGHT, SIZE_TIERS, getSize, SPECIALS, Z_ORDER, STACK, stackOffsets, deriveTraits };')();
   if (JSON.stringify(E.Z_ORDER) !== JSON.stringify(BFOverrides.Z_ORDER)) throw new Error('overrides.js Z_ORDER differs from the renderer\'s Z_ORDER');
+  const TIER_NAMES = JSON.parse(((frogSrc.match(/const TIER_NAMES = (\[[^\]]*\])/) || [])[1] || '[]').replace(/'/g, '"')); // renderer's own names
   const VERSION = (frogSrc.match(/const VERSION = '([^']+)'/) || [])[1] || '?';
   const IDS = await (await fetch('ids-map.json', { cache: 'no-cache' })).json();
   window.__engine = E;
@@ -56,15 +57,16 @@
   const tierSel = el('select', { id: 'tier', onchange: () => { state.tier = tierSel.value; touched(); } }, el('option', { value: '' }, 'auto (from height)'),
     E.SIZE_TIERS.map((t, i) => el('option', { value: String(i) }, `tier ${i}: ${tierLabel(i)}`)));
   tg.append(el('div', { class: 'tg' }, el('h3', {}, 'Size tier (group sx/sy/sz + y)'), tierSel,
-    el('p', { class: 'hint' }, 'The tier is the m-group scale (sx/sy/sz) and y offset. Like the v3.3 renderer\'s own three.js view, both views fit the camera to each frog (bounding sphere of every part except the laser), so tiers are not compared by on-screen size: see the scale/y values, and the 1.8 m pole in the MML view.')));
+    el('p', { class: 'hint' }, 'The tier is the m-group scale (sx/sy/sz) and y offset. With "Fixed camera" on (Size QA box), both views use one camera framed for the largest tier, so smaller tiers really look smaller. With it off, both views use the v3.3 renderer\'s own fit-to-frog camera and every tier fills the view.')));
   const setMode = (m) => { document.querySelector(`input[name=mode][value=${m}]`).checked = true; };
   const mode = () => document.querySelector('input[name=mode]:checked').value;
   function touched() { setMode('custom'); schedule(); }
   $('#resetov').addEventListener('click', () => { state.parts = {}; state.colors = {}; state.tier = ''; tg.querySelectorAll('.trait').forEach((r) => r._paint()); tg.querySelectorAll('select').forEach((s) => { s.value = ''; }); setMode('auto'); schedule(); });
   document.querySelectorAll('input[name=mode]').forEach((r) => r.addEventListener('change', schedule));
-  ['anim', 'spin', 'host'].forEach((id) => $('#' + id).addEventListener('change', schedule));
+  ['anim', 'spin', 'host', 'fixedcam'].forEach((id) => $('#' + id).addEventListener('change', () => (stripOn ? renderStrip() : schedule())));
+  $('#stripview').addEventListener('change', () => { if (stripOn) renderStrip(); });
   const buildOv = () => {
-    const ov = { mode: mode(), anim: $('#anim').checked, spin: $('#spin').checked, host: $('#host').checked };
+    const ov = { mode: mode(), anim: $('#anim').checked, spin: $('#spin').checked, host: $('#host').checked, fixedCam: $('#fixedcam').checked };
     if (ov.mode === 'custom') {
       ov.parts = {}; for (const [p, v] of Object.entries(state.parts)) if (v !== 'auto') ov.parts[p] = v === 'on';
       ov.colors = {}; for (const [b, c] of Object.entries(state.colors)) if (c) ov.colors[b] = c;
@@ -106,7 +108,10 @@
   /* ---------- rendering ---------- */
   const out = $('#out');
   let gen = 0, timer = null, lastReq = null;
-  function schedule() { if (!lastReq) return; clearTimeout(timer); timer = setTimeout(() => render(lastReq), 350); }
+  let stripOn = false;
+  const tierName = (i) => TIER_NAMES[i] || `tier ${i}`;
+  const sizeText = (hs, size) => { const i = tierOf(hs); return `tier ${i} · ${tierName(i)} · scale ${size.scale} · y ${size.y}`; };
+  function schedule() { if (stripOn) return renderStrip(); if (!lastReq) return; clearTimeout(timer); timer = setTimeout(() => render(lastReq), 350); }
   const chip = (t, cls = '') => el('span', { class: 'tchip ' + cls }, t.color ? el('i', { style: `background:#${t.color}` }) : null, BFOverrides.key(t));
   const diffChips = (auto, fin) => {
     const ak = new Map(auto.map((t) => [t.part, t])); const fk = new Map(fin.map((t) => [t.part, t])); const res = [];
@@ -127,7 +132,7 @@
   };
 
   async function render(req) {
-    lastReq = req; const my = ++gen; out.innerHTML = '';
+    lastReq = req; stripOn = false; const my = ++gen; out.innerHTML = ''; $('#cursize').innerHTML = '';
     const ov = buildOv(); const src = $('#source').value;
     let tipInfo = null, tipErr = null;
     try { tipInfo = await getTip(src); } catch (e) { tipErr = e; } // block data is informational only: v3 traits need nothing but the height
@@ -161,6 +166,8 @@
     const fin = BFOverrides.apply(auto, ov);
     const autoSize = E.getSize(hs); const ti = tierOf(hs);
     const size = ov.mode === 'custom' && ov.size ? ov.size : autoSize;
+    title.append(' ', el('span', { class: 'badge tier' }, `📏 ${sizeText(hs, size)}${ov.mode === 'custom' && ov.size ? ' (forced)' : ''}`), ' ');
+    $('#cursize').append(el('div', { class: 'sz' }, el('b', {}, `${hs}`), ` → tier ${ti} · ${tierName(ti)} · scale ${size.scale} · y ${size.y}${ov.mode === 'custom' && ov.size ? ' (forced)' : ''}`));
     title.append(el('span', { class: 'badge ' + (ov.mode === 'custom' ? 'warn' : 'ok') }, ov.mode === 'custom' ? 'custom overrides' : 'auto · true derivation'));
     const rev = hs.split('').reverse();
     const n = Number(hs); const hits = E.SPECIALS.filter(([, fn]) => fn(n, hs)).map(([p]) => p);
@@ -209,7 +216,7 @@
         const w = f3.contentWindow; const P = w.__bfPreview;
         if (w.__bf) { const same = JSON.stringify(w.__bf.traits) === expectKeys && JSON.stringify((P.auto || []).map(BFOverrides.key)) === autoKeys;
           const ver = (w.blockfrog && w.blockfrog.version) || '?';
-          s3.innerHTML = `${same ? '<span class="badge ok">✓ renderer traits = page</span>' : '<span class="badge err">✕ renderer traits differ</span>'} v${esc(ver)} · loaded ${w.__bf.loaded} GLB(s)${w.__bf.failed ? `, <span class="err">${w.__bf.failed} failed</span>` : ''}${w.__bf.missing.length ? `, <span class="warn">${w.__bf.missing.length} missing</span>` : ''} · ${(Date.now() - t0) / 1000 | 0}s`;
+          s3.innerHTML = `${same ? '<span class="badge ok">✓ renderer traits = page</span>' : '<span class="badge err">✕ renderer traits differ</span>'} v${esc(ver)} · loaded ${w.__bf.loaded} GLB(s)${w.__bf.failed ? `, <span class="err">${w.__bf.failed} failed</span>` : ''}${w.__bf.missing.length ? `, <span class="warn">${w.__bf.missing.length} missing</span>` : ''} · ${(Date.now() - t0) / 1000 | 0}s · cam <b>${P.camMode === 'fixed' ? 'fixed' : 'fit'}</b>${P.coreHeight ? ` · frog ${P.coreHeight.toFixed(2)} m` : ''}`;
           if (!same) s3.title = `renderer: ${JSON.stringify(w.__bf.traits)}\npage: ${expectKeys}`;
           done3 = true; }
         else { const o = w.document.getElementById('bf-o'); if (o && o.classList.contains('err')) { s3.innerHTML = `<span class="err">${esc(o.textContent)}</span>`; done3 = true; } }
@@ -218,7 +225,7 @@
         const w = fm.contentWindow; const P = w.__bfPreview; const st = w.__mmlStatus;
         if (P && P.snapshot && !snap) { snap = P.snapshot; showSnap(); }
         if (st && st.framed) { const same = JSON.stringify((P.final || []).map(BFOverrides.key)) === expectKeys;
-          sm.innerHTML = `${same ? '<span class="badge ok">✓ MML path traits = page</span>' : '<span class="badge err">✕ differ</span>'} ${st.models} visible m-model(s), ${st.meshes} meshes · frog bbox height ${(st.box.max[1] - st.box.min[1]).toFixed(2)} m`; doneM = true; }
+          sm.innerHTML = `${same ? '<span class="badge ok">✓ MML path traits = page</span>' : '<span class="badge err">✕ differ</span>'} ${st.models} visible m-model(s), ${st.meshes} meshes · cam <b>${st.camMode === 'fixed' ? 'fixed' : 'fit'}</b> · frog (shoes+body) ${(st.box.max[1] - st.box.min[1]).toFixed(2)} m vs 1.8 m pole`; doneM = true; }
       } catch (e) { /* not ready */ }
       if ((!done3 || !doneM) && Date.now() - t0 < 90000) setTimeout(poll, 400);
       else { if (!done3) s3.innerHTML = '<span class="warn">still loading after 90 s</span>'; if (!doneM) sm.innerHTML = '<span class="warn">MML client: models not loaded after 90 s</span>'; card.dataset.done = '1'; }
@@ -226,6 +233,55 @@
     };
     poll();
   }
+
+  /* ---------- size-tier strip (Size QA) ---------- */
+  // One ordinary frog (no special traits) per tier of the renderer's own SIZE_TIERS, picked with its own getSize/SPECIALS,
+  // all under the fixed camera, so tiers are compared at the same framing next to the 1.8 m pole.
+  const pickTierHeights = (tip) => E.SIZE_TIERS.map(([max], i) => {
+    const lo = i ? Number(E.SIZE_TIERS[i - 1][0]) + 1 : 0; const hi = Number(max) === Infinity ? (tip || 972000) : Number(max);
+    const ordinary = (n) => tierOf(n) === i && !E.SPECIALS.some(([, fn]) => fn(n, String(n)));
+    for (let d = 0, mid = Math.floor((lo + hi) / 2); d <= hi - lo; d++) { for (const n of [mid + d, mid - d]) if (n >= lo && n <= hi && ordinary(n)) return n; }
+    return lo;
+  });
+  async function renderStrip() {
+    stripOn = true; const my = ++gen; out.innerHTML = '';
+    let tip = null; try { tip = (await getTip($('#source').value)).tip; } catch (e) { /* fallback range */ }
+    if (my !== gen) return;
+    const view = $('#stripview').value; const ov = { ...buildOv(), mode: 'auto', fixedCam: true, spin: false }; // same pose for every tier (drag to orbit)
+    const hs = pickTierHeights(tip);
+    $('#cursize').innerHTML = ''; hs.forEach((h, i) => $('#cursize').append(el('div', { class: 'sz' }, el('b', {}, String(h)), ` → tier ${i} · ${tierName(i)} · scale ${E.getSize(h).scale}`)));
+    const card = el('div', { class: 'card stripcard' }); out.append(card);
+    card.append(el('h2', {}, 'Size tiers, side by side ', el('span', { class: 'badge tier' }, `fixed camera · ${view === 'mml' ? 'MML view + 1.8 m pole' : 'three.js view'}`)),
+      el('p', { class: 'hint' }, `One ordinary frog per size tier (heights picked with the renderer's own SIZE_TIERS / SPECIALS), all with the same fixed camera framed for the largest tier, auto-rotate off so every frog has the same pose (drag to orbit). Real-world height = shoes+body bounding box in metres (MML units). ${view === 'mml' ? 'The yellow pole is 1.8 m.' : 'Switch "Strip view" to MML to see the 1.8 m pole.'}`));
+    const grid = el('div', { class: 'strip' }); card.append(grid);
+    const cells = hs.map((h, i) => {
+      const sz = E.getSize(h); const t = E.SIZE_TIERS[i];
+      const range = Number(t[0]) === Infinity ? `> ${Number(E.SIZE_TIERS[i - 1][0]).toLocaleString('en-US')}` : `≤ ${Number(t[0]).toLocaleString('en-US')}`;
+      const q = new URLSearchParams({ h: String(h), ov: JSON.stringify(ov), frame: `strip${gen}_${i}` }); if (tip) q.set('tip', String(tip));
+      const fr = el('iframe', { src: `frog-${view}.html?${q}`, title: `tier ${i} ${h}`, loading: 'eager' });
+      const vs = el('div', { class: 'vs' }, 'loading…');
+      grid.append(el('div', { class: 'cell', 'data-tier': String(i), 'data-h': String(h) },
+        el('div', { class: 'lab' }, el('b', {}, `tier ${i} · ${tierName(i)}`), el('br'), `${h}.bitmap (${range})`, el('br'), `scale ${sz.scale} · y ${sz.y}`), fr, vs));
+      return { h, i, fr, vs };
+    });
+    const t0 = Date.now();
+    const poll = () => {
+      if (my !== gen) return; let done = 0;
+      for (const c of cells) {
+        if (c.done) { done++; continue; }
+        try {
+          const w = c.fr.contentWindow; const P = w.__bfPreview;
+          let m = null, cam = null;
+          if (view === 'mml') { const st = w.__mmlStatus; if (st && st.framed) { m = st.coreHeight; cam = st.camMode; } }
+          else if (w.__bf) { m = P.coreHeight; cam = P.camMode; }
+          if (m != null) { c.done = true; c.m = m; c.vs.innerHTML = `<b style="color:var(--fg);font-size:14px">${m.toFixed(2)} m</b> tall (shoes+body) · ${(m / 1.8 * 100).toFixed(0)}% of the 1.8 m pole · cam ${cam}`; c.fr.closest('.cell').dataset.metres = m.toFixed(3); done++; }
+        } catch (e) { /* not ready */ }
+      }
+      if (done < cells.length && Date.now() - t0 < 120000) setTimeout(poll, 400); else card.dataset.done = '1';
+    };
+    poll();
+  }
+  $('#strip').addEventListener('click', () => { renderStrip(); if (narrow()) setTimeout(() => out.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50); });
 
   /* ---------- wiring ---------- */
   const narrow = () => matchMedia('(max-width: 900px)').matches;
@@ -243,7 +299,8 @@
     tg.querySelectorAll('.trait').forEach((r) => r._paint()); setMode('custom');
   }
   if (q.get('src')) $('#source').value = q.get('src');
-  ['anim', 'spin', 'host'].forEach((k) => { if (q.get(k) === '0') $('#' + k).checked = false; });
+  ['anim', 'spin', 'host', 'fixedcam'].forEach((k) => { if (q.get(k) === '0') $('#' + k).checked = false; });
+  if (q.get('stripview')) $('#stripview').value = q.get('stripview');
   if (q.get('h')) $('#heights').value = q.get('h');
-  render($('#heights').value);
+  if (q.get('strip') === '1') renderStrip(); else render($('#heights').value);
 })().catch((e) => { document.getElementById('out').innerHTML = `<div class="card"><p class="err">Preview failed to start: ${String(e && e.message || e)}</p></div>`; console.error(e); });

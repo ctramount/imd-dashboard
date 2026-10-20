@@ -906,7 +906,7 @@
       box.expandByObject(c, true);
     });
     const center = box.getCenter(new THREE.Vector3());
-    const radius = box.getBoundingSphere(new THREE.Sphere()).radius || 1;
+    const radius = __bfPreview.cam(center, box.getBoundingSphere(new THREE.Sphere()).radius || 1, frog, THREE); /*PREVIEW HOOK*/
     const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, radius / 100, radius * 100);
     /** Camera distance that fits the sphere (+ margin for the walk cycle and badge) in the narrower of the two fovs. */
     const fit = () => { const v = THREE.MathUtils.degToRad(camera.fov) / 2; return radius * 1.02 / Math.sin(Math.min(v, Math.atan(Math.tan(v) * camera.aspect))); };

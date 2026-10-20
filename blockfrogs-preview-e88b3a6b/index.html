@@ -32,6 +32,14 @@
     <p class="hint">Up to 6 heights, comma- or space-separated. Each frog uses 2 WebGL views.</p>
   </section>
 
+  <section class="box sizeqa" id="sizeqa">
+    <h2>Size QA <small>(preview only)</small></h2>
+    <label class="opt big2"><input type="checkbox" id="fixedcam" checked> <span><b>Fixed camera (compare sizes)</b>: one camera for every height, in both views, framed so the largest tier fits. Off = v3.3's own fit-to-frog camera.</span></label>
+    <div id="cursize" class="cursize"><span class="hint">Render a height to see its size tier.</span></div>
+    <button type="button" id="strip" class="wide">📏 Show size-tier strip (one frog per tier)</button>
+    <label class="opt">Strip view <select id="stripview" style="width:auto"><option value="mml">MML (with 1.8 m pole)</option><option value="three">three.js (renderer's own view)</option></select></label>
+  </section>
+
   <details class="box sec" open>
     <summary><h2>Block data <small>(info only)</small></h2></summary>
     <label>Source

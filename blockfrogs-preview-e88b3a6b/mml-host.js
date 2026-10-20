@@ -2,7 +2,7 @@
 // It adds nothing to the frog: optional host-world lighting/ground (what any MML world supplies itself),
 // places the orbit camera with the v3.3 renderer's own framing (bounding-sphere fit) once the models have loaded, and maps touch drags to the client's orbit controls.
 (function () {
-  const ov = (window.__bfPreview && window.__bfPreview.ov) || {};
+  const P = window.__bfPreview; const ov = (P && P.ov) || {};
   const status = window.__mmlStatus = { models: 0, loaded: 0, meshes: 0, framed: false, box: null };
   window.addEventListener('load', async () => {
     document.documentElement.style.background = document.body.style.background = '#0b1220'; // host-world backdrop
@@ -14,8 +14,8 @@
         + '<m-light type="point" x="-6" y="6" z="-5" intensity="60" distance="60" cast-shadows="false" color="#9fd8ff"></m-light>'
         + '<m-light type="point" x="0" y="4" z="9" intensity="50" distance="60" cast-shadows="false"></m-light>'
         + '<m-plane width="9" height="9" rx="-90" z="0.6" color="#18241b"></m-plane>' // small, dark ground (was 30 x 30 m, which filled the view)
-        + '<m-cylinder radius="0.04" height="1.8" x="-2.4" y="0.9" z="-1.2" color="#ffd166"></m-cylinder>'
-        + '<m-label content="1.8 m" x="-2.4" y="2.05" z="-1.2" width="0.9" height="0.3" font-size="16" alignment="center" color="#0b1220" font-color="#ffd166"></m-label>';
+        + '<m-cylinder id="bf-pole" radius="0.04" height="1.8" x="-2.4" y="0.9" z="-1.2" color="#ffd166"></m-cylinder>'
+        + '<m-label id="bf-pole-label" content="1.8 m" x="-2.4" y="2.05" z="-1.2" width="0.9" height="0.3" font-size="16" alignment="center" color="#0b1220" font-color="#ffd166"></m-label>';
       document.body.appendChild(host);
     }
     // v3.3 framing constants. They are inline literals in the renderer's renderThree() (not in a named constant), mirrored here:
@@ -54,8 +54,28 @@
           if (/^(shoes|body[1-5])$/.test(e.id)) core.expandByObject(cc, true);
         });
         if (box.isEmpty()) box.setFromObject(c, true);
-        const ctr = box.getCenter(new V()); const radius = box.getSize(new V()).length() * 0.5 || 1; // = Box3.getBoundingSphere().radius, as in renderThree
+        let ctr = box.getCenter(new V()); let radius = box.getSize(new V()).length() * 0.5 || 1; // = Box3.getBoundingSphere().radius, as in renderThree
         const bb = core.isEmpty() ? box : core;
+        const gs0 = Number(group.getAttribute('sy') || 1), gy0 = Number(group.getAttribute('y') || 0);
+        status.coreHeight = core.isEmpty() ? null : core.max.y - core.min.y;
+        status.camMode = 'fit';
+        if (P && P.fixedCam() && !core.isEmpty()) { // Size QA (preview only): same fixed framing as the three.js view's /*PREVIEW HOOK*/
+          const f = P.fixedFrame(core.min.toArray(), core.max.toArray(), gs0, gy0);
+          ctr = new V(f.center[0], f.center[1], f.center[2]); radius = f.radius; status.camMode = 'fixed';
+          // keep the 1.8 m pole in frame, just left of the frog on screen, at the same spot for every height
+          const pole = document.getElementById('bf-pole'), lab = document.getElementById('bf-pole-label');
+          if (pole) { // after the camera has moved: step left along the camera's own screen-right axis, on the ground
+            const at = ctr.clone(), R0 = radius;
+            requestAnimationFrame(() => requestAnimationFrame(() => {
+              const cam = ctl.camera; cam.updateMatrixWorld(true); const e = cam.matrixWorld.elements; let rx = e[0], rz = e[2]; const l = Math.hypot(rx, rz) || 1; rx /= l; rz /= l;
+              const v = (V33.fov * Math.PI / 180) / 2, half = Math.atan(Math.tan(v) * (innerWidth / innerHeight)); // horizontal half-FOV
+              const a = Math.min(R0 * 0.7, ctl.distance * Math.tan(half) * 0.72);
+              const px = at.x - rx * a, pz = at.z - rz * a;
+              pole.setAttribute('x', String(px)); pole.setAttribute('z', String(pz)); lab.setAttribute('x', String(px)); lab.setAttribute('z', String(pz));
+              status.pole = [px, pz];
+            }));
+          }
+        }
         status.box = { min: bb.min.toArray().map((v) => +v.toFixed(3)), max: bb.max.toArray().map((v) => +v.toFixed(3)) };
         const fit = () => { const v = (V33.fov * Math.PI / 180) / 2; const asp = innerWidth / innerHeight; return radius * V33.margin / Math.sin(Math.min(v, Math.atan(Math.tan(v) * asp))); };
         adapter.setCameraFOV(V33.fov);
