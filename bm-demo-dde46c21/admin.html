@@ -52,7 +52,7 @@
     <p>Parent 89700091.bitmap. Window closed after block 89,916,980.</p>
     <p>Closed: awaiting burn. The parent is in the project wallet.</p>
     <p>Mint closed. Supply will be locked at 12 when the parent is burned.</p>
-    <p>Signing summary: output 0 burns the parent. The full parent value goes to the unspendable P2WSH. The witness script is OP_RETURN plus the bytes bitmap-mint-closed. That output cannot be spent.</p>
+    <p>Signing summary: output 0 burns the parent. The full parent value goes to an OP_RETURN output with the data bitmap-mint-closed. That output cannot be spent, and ord marks the parent burned.</p>
     <button type="button" onclick="opBurn('build')">Build burn</button>
     <button type="button" onclick="opBurn('sign')">Sign burn</button>
     <button type="button" onclick="opBurn('broadcast')">Broadcast burn</button>
@@ -64,6 +64,16 @@
     <p>Burned in block 89,916,840. Parent 89777777.bitmap.</p>
     <p>Supply locked at 40.</p>
     <p>Sample burn tx (not a real transaction) <code title="sample-89acb5c7a23ef6bd3960d2da5141697a07c39aaa4b7dda159b5ba6db3">sample-8…b5ba6db3</code> <button type="button" onclick="try{navigator.clipboard.writeText('sample-89acb5c7a23ef6bd3960d2da5141697a07c39aaa4b7dda159b5ba6db3')}catch(e){}this.textContent='Copied'">Copy</button></p>
+  </article>
+  <h2>E3 launches</h2>
+  <p>Verdicts from the index (the authority). LiveOCI cross-check: sample data, not a real check.</p>
+  <article class="card">
+    <h2>Block Gardens <span class="sampletag">Sample</span></h2>
+    <p class="phase">Open</p>
+    <p>Traits · 2 per Bitmap · blocks 0 up · tag <code>BM1a3f09c2e71</code></p>
+    <p>Official 6 · not official 2 (DUPLICATE 1, BITMAP_DUPLICATE 1)</p>
+    <p>Close height in master: empty (the burn is the supply lock)</p>
+    <p class="ok">Fee address is separate from the parent address.</p>
   </article>
   <p><a href="index.html">Public demo</a></p>
 </main>
