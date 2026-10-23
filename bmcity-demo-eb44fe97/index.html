@@ -419,7 +419,7 @@ function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"
 function fmt(n){return Number(n).toLocaleString("en-US")}
 function fieldValue(id){var node=document.getElementById(id);if(!node||typeof node.value!=="string")return null;return node.value}
 function captureFields(){captureRules();var n=fieldValue("n");if(n!=null)C.n=n;var d=fieldValue("d");if(d!=null)C.d=d;var pr=fieldValue("pr");if(pr!=null)C.pr=pr;var pp=fieldValue("pp");if(pp!=null&&pp!=="")C.price=Number(pp);var ry=fieldValue("ry");if(ry!=null&&ry!=="")C.royalty=Number(ry);var vp=fieldValue("vp");if(vp!=null)C.vp=vp;var bp=fieldValue("bp");if(bp!=null)C.burnPhrase=bp;var bq=fieldValue("bq");if(bq!=null)S.bq=bq}
-function mintQuote(price){price=Number(price);if(!Number.isInteger(price)||price<0)return null;if(price>0&&price<330)return null;var fee=Math.max(1000,price>0?Math.ceil(price*500/10000):0);return {cut:0,service:fee,platform:fee,creator:price,due:price+fee}}
+function mintQuote(price){price=Number(price);if(!Number.isInteger(price)||price<0)return null;if(price>0&&price<330)return null;var fee=Math.max(1000,price>0?Math.ceil(price*500/10000):0);if(fee>0&&fee<330)fee=330;return {cut:0,service:fee,platform:fee,creator:price,due:price+fee}}
 function ctaLabel(m){return null}
 function buyExtra(m){return ""}
 function feeSplit(price){var f=mintFee(price);return (Number(price)>0?fmt(price)+" + ":"Free + ")+fmt(f)+" fee"}
