@@ -48,7 +48,7 @@
       "wallet": "0x21919137e69ed667ac404c7fcb71b8179b645f46",
       "abbr": "0x2191\u20265f46",
       "count": 1550,
-      "share": 0.2889,
+      "share": 0.2887,
       "concentrated": true,
       "segment": "partner",
       "label": "Identity Units payer"
@@ -57,7 +57,7 @@
       "wallet": "0x9fadab91f6fa03dbd7f4f8a08a338704baacf63f",
       "abbr": "0x9fad\u2026f63f",
       "count": 465,
-      "share": 0.0867,
+      "share": 0.0866,
       "concentrated": true,
       "segment": "partner",
       "label": "SIMD payer"
@@ -93,7 +93,7 @@
       "wallet": "0x7efaa4fe311657ac972b6f1ce05a2ee460805fdf",
       "abbr": "0x7efa\u20265fdf",
       "count": 187,
-      "share": 0.0349,
+      "share": 0.0348,
       "concentrated": false,
       "segment": "organic",
       "label": null
@@ -143,7 +143,7 @@
       "label": "Identity Units payer",
       "confidence": "high",
       "jobs": 1550,
-      "share": 0.2818,
+      "share": 0.2816,
       "evidence": "IDENTITY UNITS create/review flood; public @IdentityUnits mint pipeline.",
       "source": "manual"
     },
@@ -198,7 +198,7 @@
       "label": "auto: partner",
       "confidence": "medium",
       "jobs": 96,
-      "share": 0.0175,
+      "share": 0.0174,
       "evidence": "Received IMDJobsPayer refund(s) (SIMD fee subsidy loop).",
       "source": "auto_funder"
     },
@@ -220,7 +220,7 @@
       "label": "auto: partner",
       "confidence": "medium",
       "jobs": 63,
-      "share": 0.0115,
+      "share": 0.0114,
       "evidence": "Received IMDJobsPayer refund(s) (SIMD fee subsidy loop).",
       "source": "auto_funder"
     },
@@ -231,7 +231,7 @@
       "label": "auto: partner",
       "confidence": "medium",
       "jobs": 63,
-      "share": 0.0115,
+      "share": 0.0114,
       "evidence": "Received IMDJobsPayer refund(s) (SIMD fee subsidy loop).",
       "source": "auto_funder"
     },
@@ -318,8 +318,8 @@
       "segment": "partner",
       "label": "auto: partner",
       "confidence": "medium",
-      "jobs": 34,
-      "share": 0.0062,
+      "jobs": 35,
+      "share": 0.0064,
       "evidence": "Received IMDJobsPayer refund(s) (SIMD fee subsidy loop).",
       "source": "auto_funder"
     },
@@ -2694,16 +2694,16 @@
         "share": 0.0109
       },
       "partner": {
-        "jobs": 3435,
-        "share": 0.6244
+        "jobs": 3436,
+        "share": 0.6242
       },
       "unclear_bot": {
         "jobs": 190,
         "share": 0.0345
       },
       "organic": {
-        "jobs": 1680,
-        "share": 0.3054
+        "jobs": 1683,
+        "share": 0.3057
       }
     },
     "last_7d": {
@@ -2716,51 +2716,51 @@
         "share": 0.0093
       },
       "partner": {
-        "jobs": 160,
-        "share": 0.2484
+        "jobs": 161,
+        "share": 0.2485
       },
       "unclear_bot": {
         "jobs": 0,
         "share": 0.0
       },
       "organic": {
-        "jobs": 474,
-        "share": 0.736
+        "jobs": 477,
+        "share": 0.7361
       }
     },
-    "total_paid_incl_swarm": 5501,
-    "total_paid_7d_incl_swarm": 644
+    "total_paid_incl_swarm": 5505,
+    "total_paid_7d_incl_swarm": 648
   },
   "counts": {
-    "cache_jobs": 6064,
-    "core_paid_non_oracle": 5365,
-    "core_ex_top": 3350,
+    "cache_jobs": 6070,
+    "core_paid_non_oracle": 5369,
+    "core_ex_top": 3354,
     "distinct_payers": 432,
     "simd_in_core": 420,
     "swarmbrain_excluded": 138,
-    "unpaid_or_missing_payer": 563,
+    "unpaid_or_missing_payer": 565,
     "oracle_skipped_in_cache": 0,
     "top_wallet_jobs": 2015,
-    "top_wallet_share": 0.3756,
-    "paid_incl_swarm": 5501,
-    "organic_all": 1680,
-    "organic_share": 0.3054,
+    "top_wallet_share": 0.3753,
+    "paid_incl_swarm": 5505,
+    "organic_all": 1683,
+    "organic_share": 0.3057,
     "organic_payers": 298,
-    "organic_7d": 474,
-    "organic_share_7d": 0.736,
+    "organic_7d": 477,
+    "organic_share_7d": 0.7361,
     "organic_payers_7d": 102,
     "new_organic_payers_week": 59
   },
   "last_7d": {
-    "paid_non_oracle": 640,
-    "ex_top": 640,
+    "paid_non_oracle": 644,
+    "ex_top": 644,
     "distinct_payers": 124,
     "top_share_pct": 0.0,
     "simd": 5,
-    "organic": 474,
-    "organic_share_pct": 73.6,
+    "organic": 477,
+    "organic_share_pct": 73.61,
     "organic_payers": 102,
-    "paid_incl_swarm": 644
+    "paid_incl_swarm": 648
   },
-  "as_of": "2026-10-24T13:07:02.854159+00:00"
+  "as_of": "2026-10-24T14:08:19.133330+00:00"
 }
