@@ -2732,35 +2732,35 @@
     "total_paid_7d_incl_swarm": 676
   },
   "counts": {
-    "cache_jobs": 6107,
+    "cache_jobs": 6108,
     "core_paid_non_oracle": 5397,
     "core_ex_top": 3382,
-    "distinct_payers": 434,
+    "distinct_payers": 435,
     "simd_in_core": 421,
     "swarmbrain_excluded": 138,
-    "unpaid_or_missing_payer": 574,
+    "unpaid_or_missing_payer": 575,
     "oracle_skipped_in_cache": 0,
     "top_wallet_jobs": 2015,
     "top_wallet_share": 0.3734,
     "paid_incl_swarm": 5533,
     "organic_all": 1696,
     "organic_share": 0.3065,
-    "organic_payers": 300,
+    "organic_payers": 301,
     "organic_7d": 490,
     "organic_share_7d": 0.7249,
-    "organic_payers_7d": 104,
-    "new_organic_payers_week": 61
+    "organic_payers_7d": 105,
+    "new_organic_payers_week": 62
   },
   "last_7d": {
     "paid_non_oracle": 672,
     "ex_top": 672,
-    "distinct_payers": 127,
+    "distinct_payers": 128,
     "top_share_pct": 0.0,
     "simd": 6,
     "organic": 490,
     "organic_share_pct": 72.49,
-    "organic_payers": 104,
+    "organic_payers": 105,
     "paid_incl_swarm": 676
   },
-  "as_of": "2026-10-24T19:05:36.585156+00:00"
+  "as_of": "2026-10-24T20:06:00.474450+00:00"
 }
