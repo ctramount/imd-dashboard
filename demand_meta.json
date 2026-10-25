@@ -263,8 +263,8 @@
       "segment": "partner",
       "label": "auto: partner",
       "confidence": "medium",
-      "jobs": 42,
-      "share": 0.0076,
+      "jobs": 43,
+      "share": 0.0077,
       "evidence": "Received IMDJobsPayer refund(s) (SIMD fee subsidy loop).",
       "source": "auto_funder"
     },
@@ -2694,8 +2694,8 @@
         "share": 0.0108
       },
       "partner": {
-        "jobs": 3448,
-        "share": 0.6207
+        "jobs": 3449,
+        "share": 0.6208
       },
       "unclear_bot": {
         "jobs": 196,
@@ -2716,8 +2716,8 @@
         "share": 0.0053
       },
       "partner": {
-        "jobs": 134,
-        "share": 0.2351
+        "jobs": 135,
+        "share": 0.2364
       },
       "unclear_bot": {
         "jobs": 6,
@@ -2725,16 +2725,16 @@
       },
       "organic": {
         "jobs": 425,
-        "share": 0.7456
+        "share": 0.7443
       }
     },
-    "total_paid_incl_swarm": 5555,
-    "total_paid_7d_incl_swarm": 570
+    "total_paid_incl_swarm": 5556,
+    "total_paid_7d_incl_swarm": 571
   },
   "counts": {
-    "cache_jobs": 6132,
-    "core_paid_non_oracle": 5419,
-    "core_ex_top": 3404,
+    "cache_jobs": 6133,
+    "core_paid_non_oracle": 5420,
+    "core_ex_top": 3405,
     "distinct_payers": 436,
     "simd_in_core": 421,
     "swarmbrain_excluded": 138,
@@ -2742,25 +2742,25 @@
     "oracle_skipped_in_cache": 0,
     "top_wallet_jobs": 2015,
     "top_wallet_share": 0.3718,
-    "paid_incl_swarm": 5555,
+    "paid_incl_swarm": 5556,
     "organic_all": 1715,
     "organic_share": 0.3087,
     "organic_payers": 302,
     "organic_7d": 425,
-    "organic_share_7d": 0.7456,
+    "organic_share_7d": 0.7443,
     "organic_payers_7d": 95,
     "new_organic_payers_week": 63
   },
   "last_7d": {
-    "paid_non_oracle": 568,
-    "ex_top": 568,
+    "paid_non_oracle": 569,
+    "ex_top": 569,
     "distinct_payers": 114,
     "top_share_pct": 0.0,
     "simd": 6,
     "organic": 425,
-    "organic_share_pct": 74.56,
+    "organic_share_pct": 74.43,
     "organic_payers": 95,
-    "paid_incl_swarm": 570
+    "paid_incl_swarm": 571
   },
-  "as_of": "2026-10-25T11:04:48.688627+00:00"
+  "as_of": "2026-10-25T12:09:34.472048+00:00"
 }
