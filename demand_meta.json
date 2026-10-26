@@ -48,7 +48,7 @@
       "wallet": "0x21919137e69ed667ac404c7fcb71b8179b645f46",
       "abbr": "0x2191\u20265f46",
       "count": 1550,
-      "share": 0.2844,
+      "share": 0.2842,
       "concentrated": true,
       "segment": "partner",
       "label": "Identity Units payer"
@@ -84,7 +84,7 @@
       "wallet": "0x8a3b860f6dbfbbbb07f21905ed8cb0234538bdc8",
       "abbr": "0x8a3b\u2026bdc8",
       "count": 196,
-      "share": 0.036,
+      "share": 0.0359,
       "concentrated": false,
       "segment": "unclear_bot",
       "label": "Pepeolithic / workflow bot"
@@ -143,7 +143,7 @@
       "label": "Identity Units payer",
       "confidence": "high",
       "jobs": 1550,
-      "share": 0.2775,
+      "share": 0.2773,
       "evidence": "IDENTITY UNITS create/review flood; public @IdentityUnits mint pipeline.",
       "source": "manual"
     },
@@ -165,7 +165,7 @@
       "label": "auto: partner",
       "confidence": "medium",
       "jobs": 212,
-      "share": 0.038,
+      "share": 0.0379,
       "evidence": "Received IMDJobsPayer refund(s) (SIMD fee subsidy loop).",
       "source": "auto_funder"
     },
@@ -2695,15 +2695,15 @@
       },
       "partner": {
         "jobs": 3454,
-        "share": 0.6183
+        "share": 0.6179
       },
       "unclear_bot": {
         "jobs": 196,
         "share": 0.0351
       },
       "organic": {
-        "jobs": 1740,
-        "share": 0.3115
+        "jobs": 1744,
+        "share": 0.312
       }
     },
     "last_7d": {
@@ -2717,50 +2717,50 @@
       },
       "partner": {
         "jobs": 106,
-        "share": 0.2314
+        "share": 0.2294
       },
       "unclear_bot": {
         "jobs": 6,
-        "share": 0.0131
+        "share": 0.013
       },
       "organic": {
-        "jobs": 346,
-        "share": 0.7555
+        "jobs": 350,
+        "share": 0.7576
       }
     },
-    "total_paid_incl_swarm": 5586,
-    "total_paid_7d_incl_swarm": 458
+    "total_paid_incl_swarm": 5590,
+    "total_paid_7d_incl_swarm": 462
   },
   "counts": {
-    "cache_jobs": 6174,
-    "core_paid_non_oracle": 5450,
-    "core_ex_top": 3435,
-    "distinct_payers": 438,
+    "cache_jobs": 6178,
+    "core_paid_non_oracle": 5454,
+    "core_ex_top": 3439,
+    "distinct_payers": 440,
     "simd_in_core": 421,
     "swarmbrain_excluded": 138,
     "unpaid_or_missing_payer": 588,
     "oracle_skipped_in_cache": 0,
     "top_wallet_jobs": 2015,
-    "top_wallet_share": 0.3697,
-    "paid_incl_swarm": 5586,
-    "organic_all": 1740,
-    "organic_share": 0.3115,
-    "organic_payers": 304,
-    "organic_7d": 346,
-    "organic_share_7d": 0.7555,
-    "organic_payers_7d": 90,
-    "new_organic_payers_week": 0
+    "top_wallet_share": 0.3695,
+    "paid_incl_swarm": 5590,
+    "organic_all": 1744,
+    "organic_share": 0.312,
+    "organic_payers": 306,
+    "organic_7d": 350,
+    "organic_share_7d": 0.7576,
+    "organic_payers_7d": 92,
+    "new_organic_payers_week": 2
   },
   "last_7d": {
-    "paid_non_oracle": 458,
-    "ex_top": 458,
-    "distinct_payers": 106,
+    "paid_non_oracle": 462,
+    "ex_top": 462,
+    "distinct_payers": 108,
     "top_share_pct": 0.0,
     "simd": 6,
-    "organic": 346,
-    "organic_share_pct": 75.55,
-    "organic_payers": 90,
-    "paid_incl_swarm": 458
+    "organic": 350,
+    "organic_share_pct": 75.76,
+    "organic_payers": 92,
+    "paid_incl_swarm": 462
   },
-  "as_of": "2026-10-26T07:04:27.809264+00:00"
+  "as_of": "2026-10-26T08:08:59.164104+00:00"
 }
