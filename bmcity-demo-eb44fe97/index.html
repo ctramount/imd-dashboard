@@ -264,6 +264,8 @@ button.pick{width:100%;background:none;color:inherit;text-align:left;font-size:1
 .filt button{flex:0 0 auto;min-height:40px;padding:0 14px;border-radius:999px;background:#1c1d19;border:1px solid #3a3a30;color:#ccc;font-size:14px;cursor:pointer}
 .filt button[aria-pressed="true"]{background:#f2eee5;color:#111;border-color:#f2eee5}
 .mintbar{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));border-top:1px solid #2a2820;background:#0d0e0cf2;backdrop-filter:blur(8px);z-index:15;transform:translateY(110%);transition:transform .2s}
+/* The sticky Mint bar is for phones, where the button scrolls out of view. On wider screens the buy box stays in view. */
+@media(min-width:900px){.mintbar{display:none!important}}
 .mintbar.show{transform:none}
 .mintbar .in{max-width:1088px;margin:0 auto;display:flex;align-items:center;gap:10px}
 .mintbar .in div{min-width:0;flex:1;font-size:13px;color:#c9c1b2;line-height:1.3}
