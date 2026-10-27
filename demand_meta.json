@@ -48,7 +48,7 @@
       "wallet": "0x21919137e69ed667ac404c7fcb71b8179b645f46",
       "abbr": "0x2191\u20265f46",
       "count": 1550,
-      "share": 0.2804,
+      "share": 0.2803,
       "concentrated": true,
       "segment": "partner",
       "label": "Identity Units payer"
@@ -66,7 +66,7 @@
       "wallet": "0xc94400e90bb652afa02740bff50824e14069c133",
       "abbr": "0xc944\u2026c133",
       "count": 212,
-      "share": 0.0384,
+      "share": 0.0383,
       "concentrated": false,
       "segment": "partner",
       "label": "auto: partner"
@@ -84,7 +84,7 @@
       "wallet": "0x8a3b860f6dbfbbbb07f21905ed8cb0234538bdc8",
       "abbr": "0x8a3b\u2026bdc8",
       "count": 196,
-      "share": 0.0355,
+      "share": 0.0354,
       "concentrated": false,
       "segment": "unclear_bot",
       "label": "Pepeolithic / workflow bot"
@@ -143,7 +143,7 @@
       "label": "Identity Units payer",
       "confidence": "high",
       "jobs": 1550,
-      "share": 0.2737,
+      "share": 0.2736,
       "evidence": "IDENTITY UNITS create/review flood; public @IdentityUnits mint pipeline.",
       "source": "manual"
     },
@@ -198,7 +198,7 @@
       "label": "auto: partner",
       "confidence": "medium",
       "jobs": 96,
-      "share": 0.017,
+      "share": 0.0169,
       "evidence": "Received IMDJobsPayer refund(s) (SIMD fee subsidy loop).",
       "source": "auto_funder"
     },
@@ -264,7 +264,7 @@
       "label": "auto: partner",
       "confidence": "medium",
       "jobs": 49,
-      "share": 0.0087,
+      "share": 0.0086,
       "evidence": "Received IMDJobsPayer refund(s) (SIMD fee subsidy loop).",
       "source": "auto_funder"
     },
@@ -2695,15 +2695,15 @@
       },
       "partner": {
         "jobs": 3461,
-        "share": 0.6112
+        "share": 0.6109
       },
       "unclear_bot": {
         "jobs": 196,
         "share": 0.0346
       },
       "organic": {
-        "jobs": 1801,
-        "share": 0.318
+        "jobs": 1803,
+        "share": 0.3183
       }
     },
     "last_7d": {
@@ -2713,54 +2713,54 @@
       },
       "team_adjacent": {
         "jobs": 9,
-        "share": 0.0218
+        "share": 0.0217
       },
       "partner": {
         "jobs": 91,
-        "share": 0.2203
+        "share": 0.2193
       },
       "unclear_bot": {
         "jobs": 6,
         "share": 0.0145
       },
       "organic": {
-        "jobs": 307,
-        "share": 0.7433
+        "jobs": 309,
+        "share": 0.7446
       }
     },
-    "total_paid_incl_swarm": 5663,
-    "total_paid_7d_incl_swarm": 413
+    "total_paid_incl_swarm": 5665,
+    "total_paid_7d_incl_swarm": 415
   },
   "counts": {
-    "cache_jobs": 6264,
-    "core_paid_non_oracle": 5527,
-    "core_ex_top": 3512,
-    "distinct_payers": 445,
+    "cache_jobs": 6266,
+    "core_paid_non_oracle": 5529,
+    "core_ex_top": 3514,
+    "distinct_payers": 446,
     "simd_in_core": 421,
     "swarmbrain_excluded": 138,
     "unpaid_or_missing_payer": 601,
     "oracle_skipped_in_cache": 0,
     "top_wallet_jobs": 2015,
-    "top_wallet_share": 0.3646,
-    "paid_incl_swarm": 5663,
-    "organic_all": 1801,
-    "organic_share": 0.318,
-    "organic_payers": 311,
-    "organic_7d": 307,
-    "organic_share_7d": 0.7433,
-    "organic_payers_7d": 82,
-    "new_organic_payers_week": 7
+    "top_wallet_share": 0.3644,
+    "paid_incl_swarm": 5665,
+    "organic_all": 1803,
+    "organic_share": 0.3183,
+    "organic_payers": 312,
+    "organic_7d": 309,
+    "organic_share_7d": 0.7446,
+    "organic_payers_7d": 83,
+    "new_organic_payers_week": 8
   },
   "last_7d": {
-    "paid_non_oracle": 413,
-    "ex_top": 413,
-    "distinct_payers": 96,
+    "paid_non_oracle": 415,
+    "ex_top": 415,
+    "distinct_payers": 97,
     "top_share_pct": 0.0,
     "simd": 5,
-    "organic": 307,
-    "organic_share_pct": 74.33,
-    "organic_payers": 82,
-    "paid_incl_swarm": 413
+    "organic": 309,
+    "organic_share_pct": 74.46,
+    "organic_payers": 83,
+    "paid_incl_swarm": 415
   },
-  "as_of": "2026-10-27T22:10:51.512591+00:00"
+  "as_of": "2026-10-27T23:04:11.400255+00:00"
 }
