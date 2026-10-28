@@ -324,22 +324,23 @@ details.about{margin:16px 0}
    *  ELIGIBLE-BEGIN and ELIGIBLE-END are identical in the master and in e3-v3.4/eligible.js; indexers, co-signers and
    *  pickers copy them verbatim. Pure functions of the bitmap height N (a non-negative safe integer). ---- */
   /*ELIGIBLE-BEGIN*/
-  /** Limits: depth counts nodes on the longest root-to-leaf path (a bare leaf = 1, any(not(leaf)) = 3); every leaf
-   *  occurrence counts toward maxLeaves (duplicates too); digit strings are 1..maxDigits ASCII digits. */
-  const ELIGIBLE_LIMITS = Object.freeze({ maxDepth: 3, maxLeaves: 16, maxDigits: 8 });
-  /** Boolean leaves (value must be exactly true) and digit-string leaves of the v3.4 launch set. */
-  const ELIGIBLE_FLAGS = ['palindrome', 'prime', 'fibonacci', 'powerOf10', 'sameDigits', 'halving', 'difficultyAdjustment'];
+  /** Limits: depth counts nodes on the longest root-to-leaf path (a bare test = 1, any(not(test)) = 3); every test
+   *  occurrence counts toward maxTests (a heights list counts as one); digit text is 1..maxDigits ASCII digits. */
+  const ELIGIBLE_LIMITS = Object.freeze({ maxDepth: 3, maxTests: 16, maxLeaves: 16, maxDigits: 8, maxHeights: 1000 });
+  /** Tests whose value must be exactly true, and tests whose value is digit text. */
+  const ELIGIBLE_FLAGS = ['palindrome', 'prime', 'fibonacci', 'powerOf10', 'sameDigits', 'halving', 'difficultyAdjustment', 'square', 'cube'];
   const ELIGIBLE_DIGITS = ['contains', 'startsWith', 'endsWith'];
-  /** null when `pred` is a well-formed predicate, else a short 'path: problem' string (the rules are then MALFORMED). */
+  /** null when `pred` is a well-formed filter, else a short 'path: problem' string (a malformed filter matches nothing). */
   const eligibleError = (/** @type {any} */ pred) => {
-    let leaves = 0;
+    let tests = 0;
     const uint = (/** @type {any} */ x) => typeof x === 'number' && Number.isSafeInteger(x) && x >= 0;
+    const isObj = (/** @type {any} */ x) => x !== null && typeof x === 'object' && !Array.isArray(x);
     /** @returns {string|null} */
     const walk = (/** @type {any} */ p, /** @type {number} */ depth, /** @type {string} */ at) => {
       if (depth > ELIGIBLE_LIMITS.maxDepth) return `${at}: nested deeper than ${ELIGIBLE_LIMITS.maxDepth}`;
-      if (p === null || typeof p !== 'object' || Array.isArray(p)) return `${at}: a predicate must be an object`;
+      if (!isObj(p)) return `${at}: a test must be an object`;
       const keys = Object.keys(p);
-      if (keys.length !== 1) return `${at}: a predicate must have exactly one key (has ${keys.length})`;
+      if (keys.length !== 1) return `${at}: a test must have exactly one key (has ${keys.length})`;
       const k = keys[0], v = p[k], here = `${at}.${k}`;
       if (k === 'any' || k === 'all') {
         if (!Array.isArray(v) || v.length === 0) return `${here}: must be a non-empty array`;
@@ -347,16 +348,31 @@ details.about{margin:16px 0}
         return null;
       }
       if (k === 'not') return walk(v, depth + 1, here);
-      if (++leaves > ELIGIBLE_LIMITS.maxLeaves) return `${here}: more than ${ELIGIBLE_LIMITS.maxLeaves} leaves`;
+      if (++tests > ELIGIBLE_LIMITS.maxTests) return `${here}: more than ${ELIGIBLE_LIMITS.maxTests} tests`;
       if (ELIGIBLE_FLAGS.includes(k)) return v === true ? null : `${here}: must be true (use "not" to negate)`;
-      if (ELIGIBLE_DIGITS.includes(k)) return typeof v === 'string' && /^[0-9]{1,8}$/.test(v) ? null : `${here}: must be a string of 1-${ELIGIBLE_LIMITS.maxDigits} digits`;
-      if (k === 'range') return Array.isArray(v) && v.length === 2 && uint(v[0]) && (v[1] === null || (uint(v[1]) && v[0] <= v[1])) ? null
-        : `${here}: must be [lo, hi] with lo, hi non-negative safe integers, lo <= hi, hi may be null`;
-      return `${here}: unknown predicate`;
+      if (ELIGIBLE_DIGITS.includes(k)) return typeof v === 'string' && /^[0-9]{1,8}$/.test(v) ? null : `${here}: must be text of 1-${ELIGIBLE_LIMITS.maxDigits} digits`;
+      if (k === 'range') return Array.isArray(v) && v.length === 2 && uint(v[0]) && uint(v[1]) && v[0] <= v[1] ? null : `${here}: must be [from, to], whole numbers, from <= to`;
+      if (k === 'mod') return Array.isArray(v) && v.length === 2 && uint(v[0]) && v[0] >= 2 && uint(v[1]) && v[1] < v[0] ? null : `${here}: must be [m, r], whole numbers, m >= 2, r < m`;
+      if (k === 'digitAt') return Array.isArray(v) && v.length === 2 && uint(v[0]) && v[0] >= 1 && uint(v[1]) && v[1] <= 9 ? null : `${here}: must be [p, d], p >= 1 (from the right), d 0-9`;
+      if (k === 'digitSum') {
+        if (!isObj(v) || Object.keys(v).length !== 1) return `${here}: must be {"eq": s} or {"multipleOf": k}`;
+        if ('eq' in v) return uint(v.eq) ? null : `${here}.eq: must be a whole number`;
+        if ('multipleOf' in v) return uint(v.multipleOf) && v.multipleOf >= 1 ? null : `${here}.multipleOf: must be a whole number >= 1`;
+        return `${here}: must be {"eq": s} or {"multipleOf": k}`;
+      }
+      if (k === 'digits') return typeof v === 'string' && /^[0-9?]{1,10}$/.test(v) && !(v.length > 1 && v[0] === '0') ? null : `${here}: must be a mask of 1-10 characters, each 0-9 or ?, not starting with 0`;
+      if (k === 'heights') return Array.isArray(v) && v.length >= 1 && v.length <= ELIGIBLE_LIMITS.maxHeights && v.every(uint) ? null : `${here}: must be a list of 1-${ELIGIBLE_LIMITS.maxHeights} whole-number heights`;
+      return `${here}: unknown test`;
     };
     return walk(pred, 1, 'eligible');
   };
-  /** Does height N match the WELL-FORMED predicate `p`? (Call eligibleError first; isEligible does both.) */
+  /** Integer root: the largest r with r^k <= N (k = 2 or 3), by bisection on exact integers. */
+  const eligibleRoot = (/** @type {number} */ N, /** @type {number} */ k) => {
+    let lo = 0, hi = k === 2 ? 94906266 : 208064; // above the root of Number.MAX_SAFE_INTEGER
+    while (lo < hi) { const mid = Math.floor((lo + hi + 1) / 2); let x = 1; for (let i = 0; i < k; i++) x *= mid; if (x <= N) lo = mid; else hi = mid - 1; }
+    return lo;
+  };
+  /** Does height N match the WELL-FORMED filter `p`? (Call eligibleError first; isEligible does both.) */
   const eligibleMatch = (/** @type {any} */ p, /** @type {number} */ N) => {
     const k = Object.keys(p)[0], v = p[k], s = String(N);
     switch (k) {
@@ -368,17 +384,24 @@ details.about{margin:16px 0}
       case 'fibonacci': { let a = 0, b = 1; while (a < N) { const c = a + b; a = b; b = c; } return a === N; }
       case 'powerOf10': return /^10*$/.test(s);
       case 'sameDigits': return /^([0-9])\1+$/.test(s);
+      case 'square': { const r = eligibleRoot(N, 2); return r * r === N; }
+      case 'cube': { const r = eligibleRoot(N, 3); return r * r * r === N; }
+      case 'mod': return N % v[0] === v[1];
+      case 'halving': return N % 210000 === 0;
+      case 'difficultyAdjustment': return N % 2016 === 0;
       case 'contains': return s.includes(v);
       case 'startsWith': return s.startsWith(v);
       case 'endsWith': return s.endsWith(v);
-      case 'halving': return N % 210000 === 0;
-      case 'difficultyAdjustment': return N % 2016 === 0;
-      case 'range': return N >= v[0] && (v[1] === null || N <= v[1]);
+      case 'digitSum': { let t = 0; for (const c of s) t += c.charCodeAt(0) - 48; return 'eq' in v ? t === v.eq : t % v.multipleOf === 0; }
+      case 'digitAt': return s.length >= v[0] && s.charCodeAt(s.length - v[0]) - 48 === v[1];
+      case 'range': return N >= v[0] && N <= v[1];
+      case 'heights': return v.includes(N);
+      case 'digits': { if (s.length !== v.length) return false; for (let i = 0; i < v.length; i++) if (v[i] !== '?' && v[i] !== s[i]) return false; return true; }
     }
     return false;
   };
-  /** The E3 v3.4 eligibility rule for bitmap height N under rules R: true = eligible. R.eligible absent or null = every N
-   *  is eligible (v3.3 behaviour). Malformed R.eligible (or N not a non-negative safe integer) = false: fail closed. */
+  /** The eligibility rule for Bitmap height N under rules R: true = eligible. R.eligible absent or null = every N.
+   *  A malformed R.eligible (or N not a non-negative safe integer) never counts as a match: fail closed. */
   const isEligible = (/** @type {any} */ R, /** @type {number} */ N) => {
     if (R.eligible == null) return true;
     if (eligibleError(R.eligible) !== null || !Number.isSafeInteger(N) || N < 0) return false;
@@ -521,7 +544,7 @@ function verdictHtml(code,compact){var ok=code==="OK";var label=E3_LABELS[code]|
 function captureRules(){var k=fieldValue("pk");if(k!=null&&k!=="")C.k=Math.max(1,Math.min(100,Math.trunc(Number(k))||1));var lo=fieldValue("plo");if(lo!=null)C.lo=lo;var cap=fieldValue("pcap");if(cap!=null)C.cap=cap;var hi=fieldValue("phi");if(hi!=null)C.hi=hi;(C.fields||[]).forEach(function(row,i){var a=fieldValue("fk"+i);if(a!=null)row.key=a;var b=fieldValue("fv"+i);if(b!=null)row.value=b})}
 function fieldsObject(){var out={};(C.fields||[]).forEach(function(row){var k=String(row.key||"").trim();if(k||row.value)out[k]=String(row.value||"")});return out}
 function rulesProblem(){var lo=C.lo===""?0:Number(C.lo);var hi=C.hi===""?null:Number(C.hi);if(!(lo>=0)||Math.trunc(lo)!==lo)return "Lowest block must be a whole number, 0 or more.";if(hi!==null&&(!(hi>=lo)||Math.trunc(hi)!==hi))return "Highest block must be a whole number, not below the lowest.";if(C.cap!=null&&C.cap!==""&&(!(Number(C.cap)>=1)||Math.trunc(Number(C.cap))!==Number(C.cap)))return "Supply cap must be a whole number, 1 or more, or empty for no cap.";var f=fieldsObject();var keys=Object.keys(f);if(!keys.length)return "";if((C.artMode||"generative")==="edition")return "Edition mints carry no extra fields.";if(keys.length>4)return "At most 4 extra fields.";for(var i=0;i<keys.length;i++){var k=keys[i];if(k==="f"||k==="h")return "Field names f and h are taken.";if(!FIELD_KEY_RE.test(k))return "Field name "+JSON.stringify(k)+": a letter, then up to 7 lowercase letters, digits or _.";if(!f[k])return "Field "+k+" needs a value.";if(new TextEncoder().encode(f[k]).length>32)return "Field "+k+" is over 32 bytes."}return ""}
-var FILTER_FLAGS=[["palindrome","Palindrome"],["prime","Prime"],["fibonacci","Fibonacci"],["sameDigits","Same digits"],["powerOf10","Power of 10"],["halving","Halving block"],["difficultyAdjustment","Difficulty adjustment"]];
+var FILTER_FLAGS=[["palindrome","Palindrome"],["prime","Prime"],["fibonacci","Fibonacci"],["sameDigits","Same digits"],["powerOf10","Power of 10"],["halving","Halving block"],["difficultyAdjustment","Difficulty adjustment"],["square","Perfect square"],["cube","Perfect cube"]];
 var FILTER_DIGITS=[["contains","Contains digits","e.g. 420"],["startsWith","Starts with","e.g. 69"],["endsWith","Ends with","e.g. 000"]];
 function filterState(){if(!C.filter)C.filter={flags:[],contains:"",startsWith:"",endsWith:"",join:"any"};return C.filter}
 function launchFilter(){var f=filterState();var leaves=f.flags.map(function(k){var o={};o[k]=true;return o});FILTER_DIGITS.forEach(function(d){var v=String(f[d[0]]||"").trim();if(v){var o={};o[d[0]]=v;leaves.push(o)}});if(!leaves.length)return null;if(leaves.length===1)return leaves[0];var w={};w[f.join==="all"?"all":"any"]=leaves;return w}
