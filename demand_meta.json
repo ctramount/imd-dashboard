@@ -2732,13 +2732,13 @@
     "total_paid_7d_incl_swarm": 311
   },
   "counts": {
-    "cache_jobs": 6366,
+    "cache_jobs": 6367,
     "core_paid_non_oracle": 5616,
     "core_ex_top": 3601,
     "distinct_payers": 449,
     "simd_in_core": 421,
     "swarmbrain_excluded": 138,
-    "unpaid_or_missing_payer": 614,
+    "unpaid_or_missing_payer": 615,
     "oracle_skipped_in_cache": 0,
     "top_wallet_jobs": 2015,
     "top_wallet_share": 0.3588,
@@ -2762,5 +2762,5 @@
     "organic_payers": 58,
     "paid_incl_swarm": 311
   },
-  "as_of": "2026-10-29T18:11:19.851975+00:00"
+  "as_of": "2026-10-29T19:06:15.497544+00:00"
 }
