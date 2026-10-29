@@ -48,7 +48,7 @@
       "wallet": "0x21919137e69ed667ac404c7fcb71b8179b645f46",
       "abbr": "0x2191\u20265f46",
       "count": 1550,
-      "share": 0.2758,
+      "share": 0.2757,
       "concentrated": true,
       "segment": "partner",
       "label": "Identity Units payer"
@@ -2695,15 +2695,15 @@
       },
       "partner": {
         "jobs": 3489,
-        "share": 0.606
+        "share": 0.6059
       },
       "unclear_bot": {
         "jobs": 196,
         "share": 0.034
       },
       "organic": {
-        "jobs": 1861,
-        "share": 0.3233
+        "jobs": 1862,
+        "share": 0.3234
       }
     },
     "last_7d": {
@@ -2713,54 +2713,54 @@
       },
       "team_adjacent": {
         "jobs": 15,
-        "share": 0.0475
+        "share": 0.0473
       },
       "partner": {
         "jobs": 67,
-        "share": 0.212
+        "share": 0.2114
       },
       "unclear_bot": {
         "jobs": 6,
-        "share": 0.019
+        "share": 0.0189
       },
       "organic": {
-        "jobs": 228,
-        "share": 0.7215
+        "jobs": 229,
+        "share": 0.7224
       }
     },
-    "total_paid_incl_swarm": 5757,
-    "total_paid_7d_incl_swarm": 316
+    "total_paid_incl_swarm": 5758,
+    "total_paid_7d_incl_swarm": 317
   },
   "counts": {
-    "cache_jobs": 6372,
-    "core_paid_non_oracle": 5621,
-    "core_ex_top": 3606,
+    "cache_jobs": 6373,
+    "core_paid_non_oracle": 5622,
+    "core_ex_top": 3607,
     "distinct_payers": 450,
     "simd_in_core": 421,
     "swarmbrain_excluded": 138,
     "unpaid_or_missing_payer": 615,
     "oracle_skipped_in_cache": 0,
     "top_wallet_jobs": 2015,
-    "top_wallet_share": 0.3585,
-    "paid_incl_swarm": 5757,
-    "organic_all": 1861,
-    "organic_share": 0.3233,
+    "top_wallet_share": 0.3584,
+    "paid_incl_swarm": 5758,
+    "organic_all": 1862,
+    "organic_share": 0.3234,
     "organic_payers": 316,
-    "organic_7d": 228,
-    "organic_share_7d": 0.7215,
+    "organic_7d": 229,
+    "organic_share_7d": 0.7224,
     "organic_payers_7d": 59,
     "new_organic_payers_week": 12
   },
   "last_7d": {
-    "paid_non_oracle": 316,
-    "ex_top": 316,
+    "paid_non_oracle": 317,
+    "ex_top": 317,
     "distinct_payers": 70,
     "top_share_pct": 0.0,
     "simd": 1,
-    "organic": 228,
-    "organic_share_pct": 72.15,
+    "organic": 229,
+    "organic_share_pct": 72.24,
     "organic_payers": 59,
-    "paid_incl_swarm": 316
+    "paid_incl_swarm": 317
   },
-  "as_of": "2026-10-29T22:06:02.039939+00:00"
+  "as_of": "2026-10-29T23:06:39.141041+00:00"
 }
