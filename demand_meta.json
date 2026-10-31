@@ -48,7 +48,7 @@
       "wallet": "0x21919137e69ed667ac404c7fcb71b8179b645f46",
       "abbr": "0x2191\u20265f46",
       "count": 1550,
-      "share": 0.2695,
+      "share": 0.2694,
       "concentrated": true,
       "segment": "partner",
       "label": "Identity Units payer"
@@ -57,7 +57,7 @@
       "wallet": "0x9fadab91f6fa03dbd7f4f8a08a338704baacf63f",
       "abbr": "0x9fad\u2026f63f",
       "count": 465,
-      "share": 0.0809,
+      "share": 0.0808,
       "concentrated": true,
       "segment": "partner",
       "label": "SIMD payer"
@@ -102,7 +102,7 @@
       "wallet": "0xca182aa19dde767ab809e0a4cc9fc1860be03d36",
       "abbr": "0xca18\u20263d36",
       "count": 109,
-      "share": 0.019,
+      "share": 0.0189,
       "concentrated": false,
       "segment": "organic",
       "label": null
@@ -143,7 +143,7 @@
       "label": "Identity Units payer",
       "confidence": "high",
       "jobs": 1550,
-      "share": 0.2633,
+      "share": 0.2632,
       "evidence": "IDENTITY UNITS create/review flood; public @IdentityUnits mint pipeline.",
       "source": "manual"
     },
@@ -231,7 +231,7 @@
       "label": "auto: partner",
       "confidence": "medium",
       "jobs": 68,
-      "share": 0.0116,
+      "share": 0.0115,
       "evidence": "Received IMDJobsPayer refund(s) (SIMD fee subsidy loop).",
       "source": "auto_funder"
     },
@@ -253,7 +253,7 @@
       "label": "auto: partner",
       "confidence": "medium",
       "jobs": 58,
-      "share": 0.0099,
+      "share": 0.0098,
       "evidence": "Received IMDJobsPayer refund(s) (SIMD fee subsidy loop).",
       "source": "auto_funder"
     },
@@ -2695,15 +2695,15 @@
       },
       "partner": {
         "jobs": 3499,
-        "share": 0.5944
+        "share": 0.5942
       },
       "unclear_bot": {
         "jobs": 196,
         "share": 0.0333
       },
       "organic": {
-        "jobs": 1979,
-        "share": 0.3362
+        "jobs": 1981,
+        "share": 0.3364
       }
     },
     "last_7d": {
@@ -2713,54 +2713,54 @@
       },
       "team_adjacent": {
         "jobs": 17,
-        "share": 0.0487
+        "share": 0.0484
       },
       "partner": {
         "jobs": 53,
-        "share": 0.1519
+        "share": 0.151
       },
       "unclear_bot": {
         "jobs": 0,
         "share": 0.0
       },
       "organic": {
-        "jobs": 279,
-        "share": 0.7994
+        "jobs": 281,
+        "share": 0.8006
       }
     },
-    "total_paid_incl_swarm": 5887,
-    "total_paid_7d_incl_swarm": 349
+    "total_paid_incl_swarm": 5889,
+    "total_paid_7d_incl_swarm": 351
   },
   "counts": {
-    "cache_jobs": 6520,
-    "core_paid_non_oracle": 5751,
-    "core_ex_top": 3736,
-    "distinct_payers": 505,
+    "cache_jobs": 6522,
+    "core_paid_non_oracle": 5753,
+    "core_ex_top": 3738,
+    "distinct_payers": 506,
     "simd_in_core": 421,
     "swarmbrain_excluded": 138,
     "unpaid_or_missing_payer": 633,
     "oracle_skipped_in_cache": 0,
     "top_wallet_jobs": 2015,
-    "top_wallet_share": 0.3504,
-    "paid_incl_swarm": 5887,
-    "organic_all": 1979,
-    "organic_share": 0.3362,
-    "organic_payers": 371,
-    "organic_7d": 279,
-    "organic_share_7d": 0.7994,
-    "organic_payers_7d": 98,
-    "new_organic_payers_week": 67
+    "top_wallet_share": 0.3503,
+    "paid_incl_swarm": 5889,
+    "organic_all": 1981,
+    "organic_share": 0.3364,
+    "organic_payers": 372,
+    "organic_7d": 281,
+    "organic_share_7d": 0.8006,
+    "organic_payers_7d": 99,
+    "new_organic_payers_week": 68
   },
   "last_7d": {
-    "paid_non_oracle": 349,
-    "ex_top": 349,
-    "distinct_payers": 109,
+    "paid_non_oracle": 351,
+    "ex_top": 351,
+    "distinct_payers": 110,
     "top_share_pct": 0.0,
     "simd": 0,
-    "organic": 279,
-    "organic_share_pct": 79.94,
-    "organic_payers": 98,
-    "paid_incl_swarm": 349
+    "organic": 281,
+    "organic_share_pct": 80.06,
+    "organic_payers": 99,
+    "paid_incl_swarm": 351
   },
-  "as_of": "2026-10-31T15:09:17.723963+00:00"
+  "as_of": "2026-10-31T16:12:34.579021+00:00"
 }
