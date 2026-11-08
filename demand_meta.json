@@ -48,7 +48,7 @@
       "wallet": "0x21919137e69ed667ac404c7fcb71b8179b645f46",
       "abbr": "0x2191\u20265f46",
       "count": 1550,
-      "share": 0.2511,
+      "share": 0.2509,
       "concentrated": true,
       "segment": "partner",
       "label": "Identity Units payer"
@@ -102,7 +102,7 @@
       "wallet": "0xca182aa19dde767ab809e0a4cc9fc1860be03d36",
       "abbr": "0xca18\u20263d36",
       "count": 109,
-      "share": 0.0177,
+      "share": 0.0176,
       "concentrated": false,
       "segment": "organic",
       "label": null
@@ -120,7 +120,7 @@
       "wallet": "0x5b95a971b4583a5f011e9da082acdd679b870d06",
       "abbr": "0x5b95\u20260d06",
       "count": 88,
-      "share": 0.0143,
+      "share": 0.0142,
       "concentrated": false,
       "segment": "organic",
       "label": null
@@ -143,7 +143,7 @@
       "label": "Identity Units payer",
       "confidence": "high",
       "jobs": 1550,
-      "share": 0.2456,
+      "share": 0.2455,
       "evidence": "IDENTITY UNITS create/review flood; public @IdentityUnits mint pipeline.",
       "source": "manual"
     },
@@ -187,7 +187,7 @@
       "label": "Pepeolithic / workflow bot",
       "confidence": "medium",
       "jobs": 196,
-      "share": 0.0311,
+      "share": 0.031,
       "evidence": "Bursty workflow/Pepeolithic jobs; gets IMDJobsPayer refunds \u2014 kept separate from partner.",
       "source": "manual"
     },
@@ -2706,7 +2706,7 @@
     "all_time": {
       "team": {
         "jobs": 136,
-        "share": 0.0216
+        "share": 0.0215
       },
       "team_adjacent": {
         "jobs": 99,
@@ -2714,15 +2714,15 @@
       },
       "partner": {
         "jobs": 3537,
-        "share": 0.5605
+        "share": 0.5603
       },
       "unclear_bot": {
         "jobs": 196,
-        "share": 0.0311
+        "share": 0.031
       },
       "organic": {
-        "jobs": 2342,
-        "share": 0.3712
+        "jobs": 2345,
+        "share": 0.3715
       }
     },
     "last_7d": {
@@ -2732,54 +2732,54 @@
       },
       "team_adjacent": {
         "jobs": 21,
-        "share": 0.0625
+        "share": 0.0619
       },
       "partner": {
         "jobs": 27,
-        "share": 0.0804
+        "share": 0.0796
       },
       "unclear_bot": {
         "jobs": 0,
         "share": 0.0
       },
       "organic": {
-        "jobs": 288,
-        "share": 0.8571
+        "jobs": 291,
+        "share": 0.8584
       }
     },
-    "total_paid_incl_swarm": 6310,
-    "total_paid_7d_incl_swarm": 336
+    "total_paid_incl_swarm": 6313,
+    "total_paid_7d_incl_swarm": 339
   },
   "counts": {
-    "cache_jobs": 6999,
-    "core_paid_non_oracle": 6174,
-    "core_ex_top": 4159,
-    "distinct_payers": 630,
+    "cache_jobs": 7004,
+    "core_paid_non_oracle": 6177,
+    "core_ex_top": 4162,
+    "distinct_payers": 631,
     "simd_in_core": 427,
     "swarmbrain_excluded": 138,
-    "unpaid_or_missing_payer": 689,
+    "unpaid_or_missing_payer": 691,
     "oracle_skipped_in_cache": 0,
     "top_wallet_jobs": 2015,
-    "top_wallet_share": 0.3264,
-    "paid_incl_swarm": 6310,
-    "organic_all": 2342,
-    "organic_share": 0.3712,
-    "organic_payers": 495,
-    "organic_7d": 288,
-    "organic_share_7d": 0.8571,
-    "organic_payers_7d": 131,
-    "new_organic_payers_week": 100
+    "top_wallet_share": 0.3262,
+    "paid_incl_swarm": 6313,
+    "organic_all": 2345,
+    "organic_share": 0.3715,
+    "organic_payers": 496,
+    "organic_7d": 291,
+    "organic_share_7d": 0.8584,
+    "organic_payers_7d": 132,
+    "new_organic_payers_week": 101
   },
   "last_7d": {
-    "paid_non_oracle": 336,
-    "ex_top": 336,
-    "distinct_payers": 142,
+    "paid_non_oracle": 339,
+    "ex_top": 339,
+    "distinct_payers": 143,
     "top_share_pct": 0.0,
     "simd": 3,
-    "organic": 288,
-    "organic_share_pct": 85.71,
-    "organic_payers": 131,
-    "paid_incl_swarm": 336
+    "organic": 291,
+    "organic_share_pct": 85.84,
+    "organic_payers": 132,
+    "paid_incl_swarm": 339
   },
-  "as_of": "2026-11-08T02:13:13.046920+00:00"
+  "as_of": "2026-11-08T03:09:50.414945+00:00"
 }
