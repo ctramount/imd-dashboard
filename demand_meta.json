@@ -48,7 +48,7 @@
       "wallet": "0x21919137e69ed667ac404c7fcb71b8179b645f46",
       "abbr": "0x2191\u20265f46",
       "count": 1550,
-      "share": 0.2498,
+      "share": 0.2497,
       "concentrated": true,
       "segment": "partner",
       "label": "Identity Units payer"
@@ -66,7 +66,7 @@
       "wallet": "0xc94400e90bb652afa02740bff50824e14069c133",
       "abbr": "0xc944\u2026c133",
       "count": 212,
-      "share": 0.0342,
+      "share": 0.0341,
       "concentrated": false,
       "segment": "partner",
       "label": "auto: partner"
@@ -143,7 +143,7 @@
       "label": "Identity Units payer",
       "confidence": "high",
       "jobs": 1550,
-      "share": 0.2444,
+      "share": 0.2443,
       "evidence": "IDENTITY UNITS create/review flood; public @IdentityUnits mint pipeline.",
       "source": "manual"
     },
@@ -2714,15 +2714,15 @@
       },
       "partner": {
         "jobs": 3538,
-        "share": 0.5579
+        "share": 0.5577
       },
       "unclear_bot": {
         "jobs": 196,
         "share": 0.0309
       },
       "organic": {
-        "jobs": 2372,
-        "share": 0.374
+        "jobs": 2374,
+        "share": 0.3742
       }
     },
     "last_7d": {
@@ -2732,54 +2732,54 @@
       },
       "team_adjacent": {
         "jobs": 20,
-        "share": 0.0637
+        "share": 0.0633
       },
       "partner": {
         "jobs": 23,
-        "share": 0.0732
+        "share": 0.0728
       },
       "unclear_bot": {
         "jobs": 0,
         "share": 0.0
       },
       "organic": {
-        "jobs": 271,
-        "share": 0.8631
+        "jobs": 273,
+        "share": 0.8639
       }
     },
-    "total_paid_incl_swarm": 6342,
-    "total_paid_7d_incl_swarm": 314
+    "total_paid_incl_swarm": 6344,
+    "total_paid_7d_incl_swarm": 316
   },
   "counts": {
-    "cache_jobs": 7043,
-    "core_paid_non_oracle": 6206,
-    "core_ex_top": 4191,
+    "cache_jobs": 7046,
+    "core_paid_non_oracle": 6208,
+    "core_ex_top": 4193,
     "distinct_payers": 633,
     "simd_in_core": 427,
     "swarmbrain_excluded": 138,
-    "unpaid_or_missing_payer": 701,
+    "unpaid_or_missing_payer": 702,
     "oracle_skipped_in_cache": 0,
     "top_wallet_jobs": 2015,
-    "top_wallet_share": 0.3247,
-    "paid_incl_swarm": 6342,
-    "organic_all": 2372,
-    "organic_share": 0.374,
+    "top_wallet_share": 0.3246,
+    "paid_incl_swarm": 6344,
+    "organic_all": 2374,
+    "organic_share": 0.3742,
     "organic_payers": 498,
-    "organic_7d": 271,
-    "organic_share_7d": 0.8631,
+    "organic_7d": 273,
+    "organic_share_7d": 0.8639,
     "organic_payers_7d": 121,
     "new_organic_payers_week": 0
   },
   "last_7d": {
-    "paid_non_oracle": 314,
-    "ex_top": 314,
+    "paid_non_oracle": 316,
+    "ex_top": 316,
     "distinct_payers": 130,
     "top_share_pct": 0.0,
     "simd": 3,
-    "organic": 271,
-    "organic_share_pct": 86.31,
+    "organic": 273,
+    "organic_share_pct": 86.39,
     "organic_payers": 121,
-    "paid_incl_swarm": 314
+    "paid_incl_swarm": 316
   },
-  "as_of": "2026-11-09T17:08:31.250763+00:00"
+  "as_of": "2026-11-09T18:05:09.431611+00:00"
 }
