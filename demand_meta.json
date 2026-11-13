@@ -2755,7 +2755,7 @@
     "core_paid_non_oracle": 6343,
     "core_ex_top": 4328,
     "distinct_payers": 645,
-    "simd_in_core": 432,
+    "simd_in_core": 431,
     "swarmbrain_excluded": 138,
     "unpaid_or_missing_payer": 734,
     "oracle_skipped_in_cache": 0,
@@ -2775,11 +2775,11 @@
     "ex_top": 228,
     "distinct_payers": 68,
     "top_share_pct": 0.0,
-    "simd": 6,
+    "simd": 5,
     "organic": 204,
     "organic_share_pct": 89.47,
     "organic_payers": 60,
     "paid_incl_swarm": 228
   },
-  "as_of": "2026-11-13T03:12:29.394767+00:00"
+  "as_of": "2026-11-13T04:10:18.124394+00:00"
 }
