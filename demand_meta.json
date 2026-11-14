@@ -2714,15 +2714,15 @@
       },
       "partner": {
         "jobs": 3541,
-        "share": 0.5451
+        "share": 0.545
       },
       "unclear_bot": {
         "jobs": 196,
         "share": 0.0302
       },
       "organic": {
-        "jobs": 2520,
-        "share": 0.3879
+        "jobs": 2521,
+        "share": 0.388
       }
     },
     "last_7d": {
@@ -2732,28 +2732,28 @@
       },
       "team_adjacent": {
         "jobs": 4,
-        "share": 0.0211
+        "share": 0.0209
       },
       "partner": {
         "jobs": 5,
-        "share": 0.0263
+        "share": 0.0262
       },
       "unclear_bot": {
         "jobs": 0,
         "share": 0.0
       },
       "organic": {
-        "jobs": 181,
-        "share": 0.9526
+        "jobs": 182,
+        "share": 0.9529
       }
     },
-    "total_paid_incl_swarm": 6496,
-    "total_paid_7d_incl_swarm": 190
+    "total_paid_incl_swarm": 6497,
+    "total_paid_7d_incl_swarm": 191
   },
   "counts": {
-    "cache_jobs": 7233,
-    "core_paid_non_oracle": 6360,
-    "core_ex_top": 4345,
+    "cache_jobs": 7234,
+    "core_paid_non_oracle": 6361,
+    "core_ex_top": 4346,
     "distinct_payers": 648,
     "simd_in_core": 431,
     "swarmbrain_excluded": 138,
@@ -2761,25 +2761,25 @@
     "oracle_skipped_in_cache": 0,
     "top_wallet_jobs": 2015,
     "top_wallet_share": 0.3168,
-    "paid_incl_swarm": 6496,
-    "organic_all": 2520,
-    "organic_share": 0.3879,
+    "paid_incl_swarm": 6497,
+    "organic_all": 2521,
+    "organic_share": 0.388,
     "organic_payers": 513,
-    "organic_7d": 181,
-    "organic_share_7d": 0.9526,
+    "organic_7d": 182,
+    "organic_share_7d": 0.9529,
     "organic_payers_7d": 51,
     "new_organic_payers_week": 15
   },
   "last_7d": {
-    "paid_non_oracle": 190,
-    "ex_top": 190,
+    "paid_non_oracle": 191,
+    "ex_top": 191,
     "distinct_payers": 57,
     "top_share_pct": 0.0,
     "simd": 4,
-    "organic": 181,
-    "organic_share_pct": 95.26,
+    "organic": 182,
+    "organic_share_pct": 95.29,
     "organic_payers": 51,
-    "paid_incl_swarm": 190
+    "paid_incl_swarm": 191
   },
-  "as_of": "2026-11-14T11:10:18.652290+00:00"
+  "as_of": "2026-11-14T12:08:22.940489+00:00"
 }
