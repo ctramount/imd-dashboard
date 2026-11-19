@@ -2721,8 +2721,8 @@
         "share": 0.0299
       },
       "organic": {
-        "jobs": 2574,
-        "share": 0.3926
+        "jobs": 2575,
+        "share": 0.3927
       }
     },
     "last_7d": {
@@ -2732,28 +2732,28 @@
       },
       "team_adjacent": {
         "jobs": 2,
-        "share": 0.0241
+        "share": 0.0238
       },
       "partner": {
         "jobs": 7,
-        "share": 0.0843
+        "share": 0.0833
       },
       "unclear_bot": {
         "jobs": 0,
         "share": 0.0
       },
       "organic": {
-        "jobs": 74,
-        "share": 0.8916
+        "jobs": 75,
+        "share": 0.8929
       }
     },
-    "total_paid_incl_swarm": 6557,
-    "total_paid_7d_incl_swarm": 83
+    "total_paid_incl_swarm": 6558,
+    "total_paid_7d_incl_swarm": 84
   },
   "counts": {
-    "cache_jobs": 7307,
-    "core_paid_non_oracle": 6421,
-    "core_ex_top": 4406,
+    "cache_jobs": 7308,
+    "core_paid_non_oracle": 6422,
+    "core_ex_top": 4407,
     "distinct_payers": 652,
     "simd_in_core": 431,
     "swarmbrain_excluded": 138,
@@ -2761,25 +2761,25 @@
     "oracle_skipped_in_cache": 0,
     "top_wallet_jobs": 2015,
     "top_wallet_share": 0.3138,
-    "paid_incl_swarm": 6557,
-    "organic_all": 2574,
-    "organic_share": 0.3926,
+    "paid_incl_swarm": 6558,
+    "organic_all": 2575,
+    "organic_share": 0.3927,
     "organic_payers": 517,
-    "organic_7d": 74,
-    "organic_share_7d": 0.8916,
+    "organic_7d": 75,
+    "organic_share_7d": 0.8929,
     "organic_payers_7d": 25,
     "new_organic_payers_week": 3
   },
   "last_7d": {
-    "paid_non_oracle": 83,
-    "ex_top": 83,
+    "paid_non_oracle": 84,
+    "ex_top": 84,
     "distinct_payers": 31,
     "top_share_pct": 0.0,
     "simd": 0,
-    "organic": 74,
-    "organic_share_pct": 89.16,
+    "organic": 75,
+    "organic_share_pct": 89.29,
     "organic_payers": 25,
-    "paid_incl_swarm": 83
+    "paid_incl_swarm": 84
   },
-  "as_of": "2026-11-19T12:13:15.768163+00:00"
+  "as_of": "2026-11-19T13:13:55.793361+00:00"
 }
