@@ -2714,15 +2714,15 @@
       },
       "partner": {
         "jobs": 3547,
-        "share": 0.5421
+        "share": 0.542
       },
       "unclear_bot": {
         "jobs": 196,
         "share": 0.03
       },
       "organic": {
-        "jobs": 2560,
-        "share": 0.3913
+        "jobs": 2561,
+        "share": 0.3914
       }
     },
     "last_7d": {
@@ -2732,54 +2732,54 @@
       },
       "team_adjacent": {
         "jobs": 2,
-        "share": 0.029
+        "share": 0.0286
       },
       "partner": {
         "jobs": 7,
-        "share": 0.1014
+        "share": 0.1
       },
       "unclear_bot": {
         "jobs": 0,
         "share": 0.0
       },
       "organic": {
-        "jobs": 60,
-        "share": 0.8696
+        "jobs": 61,
+        "share": 0.8714
       }
     },
-    "total_paid_incl_swarm": 6543,
-    "total_paid_7d_incl_swarm": 69
+    "total_paid_incl_swarm": 6544,
+    "total_paid_7d_incl_swarm": 70
   },
   "counts": {
-    "cache_jobs": 7291,
-    "core_paid_non_oracle": 6407,
-    "core_ex_top": 4392,
-    "distinct_payers": 651,
+    "cache_jobs": 7292,
+    "core_paid_non_oracle": 6408,
+    "core_ex_top": 4393,
+    "distinct_payers": 652,
     "simd_in_core": 431,
     "swarmbrain_excluded": 138,
     "unpaid_or_missing_payer": 748,
     "oracle_skipped_in_cache": 0,
     "top_wallet_jobs": 2015,
     "top_wallet_share": 0.3145,
-    "paid_incl_swarm": 6543,
-    "organic_all": 2560,
-    "organic_share": 0.3913,
-    "organic_payers": 516,
-    "organic_7d": 60,
-    "organic_share_7d": 0.8696,
-    "organic_payers_7d": 22,
-    "new_organic_payers_week": 2
+    "paid_incl_swarm": 6544,
+    "organic_all": 2561,
+    "organic_share": 0.3914,
+    "organic_payers": 517,
+    "organic_7d": 61,
+    "organic_share_7d": 0.8714,
+    "organic_payers_7d": 23,
+    "new_organic_payers_week": 3
   },
   "last_7d": {
-    "paid_non_oracle": 69,
-    "ex_top": 69,
-    "distinct_payers": 28,
+    "paid_non_oracle": 70,
+    "ex_top": 70,
+    "distinct_payers": 29,
     "top_share_pct": 0.0,
     "simd": 0,
-    "organic": 60,
-    "organic_share_pct": 86.96,
-    "organic_payers": 22,
-    "paid_incl_swarm": 69
+    "organic": 61,
+    "organic_share_pct": 87.14,
+    "organic_payers": 23,
+    "paid_incl_swarm": 70
   },
-  "as_of": "2026-11-19T00:11:49.205806+00:00"
+  "as_of": "2026-11-19T01:08:27.676774+00:00"
 }
