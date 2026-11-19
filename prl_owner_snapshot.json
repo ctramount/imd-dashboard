@@ -1,0 +1,377 @@
+{
+ "t": 1795116736308,
+ "total_prl": 403678104.61854255,
+ "raw_top10_pct": 30.06070281770998,
+ "raw_top100_pct": 61.94905840351837,
+ "scenarios": {
+  "low": {
+   "top10_pct": 29.612528955965054,
+   "top100_pct": 53.29131068382238,
+   "top10_noncust_pct": 34.70844268059492,
+   "top100_noncust_pct": 62.4620208896625,
+   "custody_pct": 14.682058113425326,
+   "custody_prl": 59268253.9112683,
+   "top_owners": [
+    [
+     "LAUNCH",
+     47812398.88146709
+    ],
+    [
+     "prl1p7s695qtguu70p5f8dezhq88r7ucl4j45s2payzh5sw0vpqk7cpksvjauvq",
+     25197190.56668759
+    ],
+    [
+     "prl1p7zrnafa6kf4h50v4x6njxqe3m4n0qfeek4xjv0xnfrch6mmztvdq3ze6vk",
+     7273246.45195033
+    ],
+    [
+     "prl1pk3wf93ncahgncklymw283gs36qgwpa4ayw2sj7wstne9e22rc6usqed7q8",
+     6838665.99999778
+    ],
+    [
+     "prl1pzye599grkeksxcfxtkuy8l2fqzgt8l4fe8h0638vgdt943uj9dmsg0z7jz",
+     6717952.55
+    ],
+    [
+     "prl1p99ewhqwzw4cv2j8kunsvxrthaewppptdr20exm4h6krh8yqqc6gqlruyhv",
+     6186108.90188103
+    ],
+    [
+     "prl1ps8acswsr9xxh8nnfd6dl3m4sqmwj7wm6cchr8t3saau7gsuu3lfqad5x64",
+     5815152.0122764
+    ],
+    [
+     "C33",
+     5536117.39895995
+    ],
+    [
+     "prl1pqrd6z460hc5xyke9hxd6s2k2vjgw636ll8accf7szx6q4mvv60fqtcuw8r",
+     4110003.0
+    ],
+    [
+     "prl1prdeneazan6segqc7a4nsxj97gj70d7dtcfzvag3hsg64ms04lqfsamk88n",
+     4052459.85583665
+    ],
+    [
+     "prl1pqrw4pw0y03gya5f5jd9lrajjcywm03k6q9d2jefgl8gh258acvnq7am2q8",
+     3859243.6900661
+    ],
+    [
+     "prl1ps34rvnc4szwrevdzg0ux9hpc7rz25dskgvwvrzynm7pcxpq6sexs3rwlnv",
+     3722264.53999341
+    ]
+   ]
+  },
+  "central": {
+   "top10_pct": 34.665481996722605,
+   "top100_pct": 54.204760118301145,
+   "top10_noncust_pct": 40.630940257335766,
+   "top100_noncust_pct": 63.53266255574153,
+   "custody_pct": 14.682058113425326,
+   "custody_prl": 59268253.9112683,
+   "top_owners": [
+    [
+     "LAUNCH",
+     51038485.12695312
+    ],
+    [
+     "M2",
+     25197190.56668759
+    ],
+    [
+     "C5",
+     13979698.99194374
+    ],
+    [
+     "C389",
+     13860009.99876941
+    ],
+    [
+     "W7",
+     6838665.99999778
+    ],
+    [
+     "W8",
+     6717952.55
+    ],
+    [
+     "W9",
+     6186108.90188103
+    ],
+    [
+     "W10",
+     5815152.0122764
+    ],
+    [
+     "C33",
+     5536117.39895995
+    ],
+    [
+     "C0AR",
+     4767579.13378291
+    ],
+    [
+     "C20",
+     4702184.31107351
+    ],
+    [
+     "prl1prdeneazan6segqc7a4nsxj97gj70d7dtcfzvag3hsg64ms04lqfsamk88n",
+     4052459.85583665
+    ]
+   ]
+  },
+  "high": {
+   "top10_pct": 36.72525038853837,
+   "top100_pct": 57.72273395492381,
+   "top10_noncust_pct": 41.53979844277823,
+   "top100_noncust_pct": 65.28997647901608,
+   "custody_pct": 11.590205621416242,
+   "custody_prl": 46787122.37392486,
+   "top_owners": [
+    [
+     "LAUNCH",
+     51038485.12695312
+    ],
+    [
+     "M2",
+     25197190.56668759
+    ],
+    [
+     "C5",
+     13979698.99194374
+    ],
+    [
+     "C389",
+     13860009.99876941
+    ],
+    [
+     "CMQ",
+     9861495.55851353
+    ],
+    [
+     "prl1p760e3l35q88c5qcx7ngwhljhtvk94nxqp2n4dd63cxssclcgvlhqq0txl2",
+     8757034.97784302
+    ],
+    [
+     "W7",
+     6838665.99999778
+    ],
+    [
+     "W8",
+     6717952.55
+    ],
+    [
+     "W9",
+     6186108.90188103
+    ],
+    [
+     "W10",
+     5815152.0122764
+    ],
+    [
+     "C33",
+     5536117.39895995
+    ],
+    [
+     "C0AR",
+     4767579.13378291
+    ]
+   ]
+  },
+  "stress": {
+   "top10_pct": 46.652266766369046,
+   "top100_pct": 67.6497503327545,
+   "top10_noncust_pct": 47.44130545572524,
+   "top100_noncust_pct": 68.79392346811669,
+   "custody_pct": 1.6631892435855666,
+   "custody_prl": 6713930.81472569,
+   "top_owners": [
+    [
+     "LAUNCH",
+     51038485.12695312
+    ],
+    [
+     "BIG",
+     48830226.53704219
+    ],
+    [
+     "M2",
+     25197190.56668759
+    ],
+    [
+     "C5",
+     13979698.99194374
+    ],
+    [
+     "C389",
+     13860009.99876941
+    ],
+    [
+     "CMQ",
+     9861495.55851353
+    ],
+    [
+     "W7",
+     6838665.99999778
+    ],
+    [
+     "W8",
+     6717952.55
+    ],
+    [
+     "W9",
+     6186108.90188103
+    ],
+    [
+     "W10",
+     5815152.0122764
+    ],
+    [
+     "C33",
+     5536117.39895995
+    ],
+    [
+     "C0AR",
+     4767579.13378291
+    ]
+   ]
+  }
+ },
+ "top_owners_central": [
+  {
+   "key": "LAUNCH",
+   "name": "Launch-week miner",
+   "ranks": [
+    1,
+    3,
+    19,
+    172
+   ],
+   "n_addr": 4,
+   "prl": 51038485.12695312,
+   "pct": 12.643362258941977,
+   "confidence": "medium"
+  },
+  {
+   "key": "M2",
+   "name": "Large miner (#2)",
+   "ranks": [
+    2
+   ],
+   "n_addr": 1,
+   "prl": 25197190.56668759,
+   "pct": 6.241901722784244,
+   "confidence": "medium"
+  },
+  {
+   "key": "C5",
+   "name": "Multi-address holder C5",
+   "ranks": [
+    5,
+    15,
+    22
+   ],
+   "n_addr": 3,
+   "prl": 13979698.99194374,
+   "pct": 3.4630808141437144,
+   "confidence": "medium"
+  },
+  {
+   "key": "C389",
+   "name": "Multi-address holder C389",
+   "ranks": [
+    11,
+    21,
+    25,
+    26,
+    34
+   ],
+   "n_addr": 5,
+   "prl": 13860009.99876941,
+   "pct": 3.4334312017904685,
+   "confidence": "medium"
+  },
+  {
+   "key": "W7",
+   "name": "Holder (moved wallets)",
+   "ranks": [
+    7
+   ],
+   "n_addr": 1,
+   "prl": 6838665.99999778,
+   "pct": 1.6940889093947784,
+   "confidence": "medium"
+  },
+  {
+   "key": "W8",
+   "name": "Holder (moved wallets)",
+   "ranks": [
+    8
+   ],
+   "n_addr": 1,
+   "prl": 6717952.55,
+   "pct": 1.6641855164149069,
+   "confidence": "medium"
+  },
+  {
+   "key": "W9",
+   "name": "Holder (moved wallets)",
+   "ranks": [
+    9
+   ],
+   "n_addr": 1,
+   "prl": 6186108.90188103,
+   "pct": 1.5324360749579473,
+   "confidence": "medium"
+  },
+  {
+   "key": "W10",
+   "name": "Holder (moved wallets)",
+   "ranks": [
+    10
+   ],
+   "n_addr": 1,
+   "prl": 5815152.0122764,
+   "pct": 1.4405418440446391,
+   "confidence": "medium"
+  },
+  {
+   "key": "C33",
+   "name": "Multi-address holder C33",
+   "ranks": [
+    32,
+    33,
+    41,
+    50
+   ],
+   "n_addr": 4,
+   "prl": 5536117.39895995,
+   "pct": 1.3714187952282744,
+   "confidence": "high"
+  },
+  {
+   "key": "C0AR",
+   "name": "Multi-address holder C0AR",
+   "ranks": [
+    39,
+    62,
+    69,
+    75,
+    90
+   ],
+   "n_addr": 5,
+   "prl": 4767579.13378291,
+   "pct": 1.1810348590216593,
+   "confidence": "medium"
+  }
+ ],
+ "auto_labeled": {
+  "n": 2,
+  "prl": 2280500.67205575,
+  "pct_of_top200": 0.8073628662878908,
+  "refetched_this_run": 0
+ },
+ "labels_version": "2026-11-19",
+ "page": "https://cursor.com/canvas/store-d6e96841-b799-4ef6-afb0-d1e20a534760/624fb5da-70ab-4b0a-9e31-93715dd2ac72",
+ "big_cluster_prl": 48830226.5370422
+}
