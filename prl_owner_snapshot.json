@@ -1,16 +1,16 @@
 {
- "t": 1795197834140,
- "total_prl": 404678727.5952156,
- "raw_top10_pct": 29.986373657605405,
- "raw_top100_pct": 61.94731863263369,
+ "t": 1795201724392,
+ "total_prl": 404717490.6970876,
+ "raw_top10_pct": 29.983501617519224,
+ "raw_top100_pct": 61.7876469848901,
  "scenarios": {
   "low": {
-   "top10_pct": 29.776824488064644,
-   "top100_pct": 54.81534341463451,
-   "top10_noncust_pct": 34.229563763162076,
-   "top100_noncust_pct": 63.01226960460248,
-   "custody_pct": 13.008460481431788,
-   "custody_prl": 52642472.35598462,
+   "top10_pct": 29.638937430699976,
+   "top100_pct": 54.610565043562,
+   "top10_noncust_pct": 34.068928020715525,
+   "top100_noncust_pct": 62.7729456897665,
+   "custody_pct": 13.003023128059406,
+   "custody_prl": 52625508.918643974,
    "top_owners": [
     [
      "LAUNCH",
@@ -45,8 +45,8 @@
      5535928.3964815
     ],
     [
-     "prl1p8lgkm7zngqfun2wshrk5uyy9jv3v6zqjn4cspc0w9eh8fn3j2shsz7w7hs",
-     5013827.69581886
+     "prl1p5l4rg8ew596marwppzuxent4h7gvtcm3nc0u5ev9sj9aunuucaqs3ddnze",
+     4467317.07806707
     ],
     [
      "prl1pqrd6z460hc5xyke9hxd6s2k2vjgw636ll8accf7szx6q4mvv60fqtcuw8r",
@@ -63,12 +63,12 @@
    ]
   },
   "central": {
-   "top10_pct": 34.64057057652634,
-   "top100_pct": 55.85018424470472,
-   "top10_noncust_pct": 39.820620221501386,
-   "top100_noncust_pct": 64.20185750682523,
-   "custody_pct": 13.008460481431788,
-   "custody_prl": 52642472.35598462,
+   "top10_pct": 34.57640820952552,
+   "top100_pct": 55.66542191781361,
+   "top10_noncust_pct": 39.744379003447364,
+   "top100_noncust_pct": 63.985466988988605,
+   "custody_pct": 13.003023128059406,
+   "custody_prl": 52625508.918643974,
    "top_owners": [
     [
      "LAUNCH",
@@ -107,26 +107,26 @@
      5535928.3964815
     ],
     [
-     "prl1p8lgkm7zngqfun2wshrk5uyy9jv3v6zqjn4cspc0w9eh8fn3j2shsz7w7hs",
-     5013827.69581886
-    ],
-    [
      "C0AR",
      4767579.13378291
     ],
     [
-     "C20",
-     4202184.31062401
+     "prl1p5l4rg8ew596marwppzuxent4h7gvtcm3nc0u5ev9sj9aunuucaqs3ddnze",
+     4467317.07806707
+    ],
+    [
+     "prl1prdeneazan6segqc7a4nsxj97gj70d7dtcfzvag3hsg64ms04lqfsamk88n",
+     4052459.85583665
     ]
    ]
   },
   "high": {
-   "top10_pct": 36.54698438230244,
-   "top100_pct": 59.384611961120676,
-   "top10_noncust_pct": 40.577365809721755,
-   "top100_noncust_pct": 65.93351445383915,
-   "custody_pct": 9.932585191258744,
-   "custody_prl": 40195059.3692967,
+   "top10_pct": 36.54348397890677,
+   "top100_pct": 59.20992780108963,
+   "top10_noncust_pct": 40.57116281438185,
+   "top100_noncust_pct": 65.73581277670137,
+   "custody_pct": 9.927442439602272,
+   "custody_prl": 40178095.93195605,
    "top_owners": [
     [
      "LAUNCH",
@@ -173,18 +173,18 @@
      5535928.3964815
     ],
     [
-     "U:prl1p8lgkm7zngqf",
-     5013827.69581886
+     "C0AR",
+     4767579.13378291
     ]
    ]
   },
   "stress": {
-   "top10_pct": 44.95998113674874,
-   "top100_pct": 67.79760871556697,
-   "top10_noncust_pct": 45.65372993785802,
-   "top100_noncust_pct": 68.84375038589913,
-   "custody_pct": 1.5195884368124526,
-   "custody_prl": 6149451.150776661,
+   "top10_pct": 44.9471065533819,
+   "top100_pct": 67.61355037556477,
+   "top10_noncust_pct": 45.642617830852494,
+   "top100_noncust_pct": 68.65980207900157,
+   "custody_pct": 1.5238198651271413,
+   "custody_prl": 6167165.52088631,
    "top_owners": [
     [
      "LAUNCH",
@@ -192,7 +192,7 @@
     ],
     [
      "BIG",
-     42802643.19636307
+     42767965.388912775
     ],
     [
      "M2",
@@ -231,8 +231,8 @@
      5535928.3964815
     ],
     [
-     "U:prl1p8lgkm7zngqf",
-     5013827.69581886
+     "C0AR",
+     4767579.13378291
     ]
    ]
   }
@@ -245,11 +245,11 @@
     1,
     3,
     18,
-    174
+    176
    ],
    "n_addr": 4,
    "prl": 51038485.12695312,
-   "pct": 12.61209983293338,
+   "pct": 12.610891869052695,
    "confidence": "medium"
   },
   {
@@ -260,7 +260,7 @@
    ],
    "n_addr": 1,
    "prl": 25197190.56668759,
-   "pct": 6.226467775170867,
+   "pct": 6.225871415462628,
    "confidence": "medium"
   },
   {
@@ -273,7 +273,7 @@
    ],
    "n_addr": 3,
    "prl": 13979698.99194374,
-   "pct": 3.4545178776797694,
+   "pct": 3.4541870102685777,
    "confidence": "medium"
   },
   {
@@ -288,7 +288,7 @@
    ],
    "n_addr": 5,
    "prl": 13860009.99876941,
-   "pct": 3.424941578009763,
+   "pct": 3.42461354336252,
    "confidence": "medium"
   },
   {
@@ -299,7 +299,7 @@
    ],
    "n_addr": 1,
    "prl": 6838665.99999778,
-   "pct": 1.6899000450644472,
+   "pct": 1.6897381895254453,
    "confidence": "medium"
   },
   {
@@ -310,7 +310,7 @@
    ],
    "n_addr": 1,
    "prl": 6717952.55,
-   "pct": 1.660070592274795,
+   "pct": 1.6599115937462852,
    "confidence": "medium"
   },
   {
@@ -321,7 +321,7 @@
    ],
    "n_addr": 1,
    "prl": 6186108.90188103,
-   "pct": 1.5286469191602168,
+   "pct": 1.5285005081510172,
    "confidence": "medium"
   },
   {
@@ -332,7 +332,7 @@
    ],
    "n_addr": 1,
    "prl": 5815152.0122764,
-   "pct": 1.43697990918195,
+   "pct": 1.4368422778714978,
    "confidence": "medium"
   },
   {
@@ -346,28 +346,32 @@
    ],
    "n_addr": 4,
    "prl": 5535928.3964815,
-   "pct": 1.3679810721404841,
+   "pct": 1.3678500494125883,
    "confidence": "high"
   },
   {
-   "key": "prl1p8lgkm7zng\u2026",
-   "name": "Unknown single owner",
+   "key": "C0AR",
+   "name": "Multi-address holder C0AR",
    "ranks": [
-    11
+    38,
+    61,
+    69,
+    76,
+    90
    ],
-   "n_addr": 1,
-   "prl": 5013827.69581886,
-   "pct": 1.2389649749106646,
-   "confidence": "low"
+   "n_addr": 5,
+   "prl": 4767579.13378291,
+   "pct": 1.1780017526722668,
+   "confidence": "medium"
   }
  ],
  "auto_labeled": {
-  "n": 8,
-  "prl": 11077891.44300216,
-  "pct_of_top200": 3.897824767803554,
-  "refetched_this_run": 2
+  "n": 10,
+  "prl": 11204192.5209753,
+  "pct_of_top200": 3.9477807359427435,
+  "refetched_this_run": 4
  },
  "labels_version": "2026-11-19",
  "page": "https://cursor.com/canvas/store-d6e96841-b799-4ef6-afb0-d1e20a534760/624fb5da-70ab-4b0a-9e31-93715dd2ac72",
- "big_cluster_prl": 42802643.19636308
+ "big_cluster_prl": 42767965.38891278
 }
