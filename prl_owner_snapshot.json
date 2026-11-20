@@ -1,16 +1,16 @@
 {
- "t": 1795205324363,
- "total_prl": 404736873.98110867,
- "raw_top10_pct": 29.98206567539198,
- "raw_top100_pct": 61.76548252043611,
+ "t": 1795209085324,
+ "total_prl": 404786404.9650631,
+ "raw_top10_pct": 29.97839697210631,
+ "raw_top100_pct": 61.61799858089393,
  "scenarios": {
   "low": {
-   "top10_pct": 29.637517990122074,
-   "top100_pct": 54.611004258874324,
-   "top10_noncust_pct": 34.05865697501435,
-   "top100_noncust_pct": 62.75753123908564,
-   "custody_pct": 12.980955144930281,
-   "custody_prl": 52538712.06648071,
+   "top10_pct": 29.53140351314312,
+   "top100_pct": 54.44810236578406,
+   "top10_noncust_pct": 33.963309081718386,
+   "top100_noncust_pct": 62.61936479717777,
+   "custody_pct": 13.049098242788283,
+   "custody_prl": 52820975.65734191,
    "top_owners": [
     [
      "LAUNCH",
@@ -45,10 +45,6 @@
      5535928.3964815
     ],
     [
-     "prl1p5l4rg8ew596marwppzuxent4h7gvtcm3nc0u5ev9sj9aunuucaqs3ddnze",
-     4467317.07806707
-    ],
-    [
      "prl1pqrd6z460hc5xyke9hxd6s2k2vjgw636ll8accf7szx6q4mvv60fqtcuw8r",
      4110003.0
     ],
@@ -59,16 +55,20 @@
     [
      "prl1pqrw4pw0y03gya5f5jd9lrajjcywm03k6q9d2jefgl8gh258acvnq7am2q8",
      3859243.6900661
+    ],
+    [
+     "prl1ps09ryjynur8azx3yvjgelhqmwgmhurr975k7emytv5ahwntgpktqhsd8fa",
+     3822261.82726697
     ]
    ]
   },
   "central": {
-   "top10_pct": 34.57475230816382,
-   "top100_pct": 55.679706809158056,
-   "top10_noncust_pct": 39.73239693189932,
-   "top100_noncust_pct": 63.98565613066961,
-   "custody_pct": 12.980955144930281,
-   "custody_prl": 52538712.06648071,
+   "top10_pct": 34.57052162877143,
+   "top100_pct": 55.50277839783687,
+   "top10_noncust_pct": 39.758669467627634,
+   "top100_noncust_pct": 63.832320627121575,
+   "custody_pct": 13.049098242788283,
+   "custody_prl": 52820975.65734191,
    "top_owners": [
     [
      "LAUNCH",
@@ -111,22 +111,22 @@
      4767579.13378291
     ],
     [
-     "prl1p5l4rg8ew596marwppzuxent4h7gvtcm3nc0u5ev9sj9aunuucaqs3ddnze",
-     4467317.07806707
-    ],
-    [
      "prl1prdeneazan6segqc7a4nsxj97gj70d7dtcfzvag3hsg64ms04lqfsamk88n",
      4052459.85583665
+    ],
+    [
+     "S13",
+     3859243.6900661
     ]
    ]
   },
   "high": {
-   "top10_pct": 36.56949585649848,
-   "top100_pct": 59.23329890965441,
-   "top10_noncust_pct": 40.590163311401504,
-   "top100_noncust_pct": 65.74575940698088,
-   "custody_pct": 9.905521749338824,
-   "custody_prl": 40091299.07979279,
+   "top10_pct": 36.56502109378344,
+   "top100_pct": 59.04668083439313,
+   "top10_noncust_pct": 40.61608625764773,
+   "top100_noncust_pct": 65.58850535998299,
+   "custody_pct": 9.974041167251803,
+   "custody_prl": 40373562.67065399,
    "top_owners": [
     [
      "LAUNCH",
@@ -179,12 +179,12 @@
    ]
   },
   "stress": {
-   "top10_pct": 44.981347674891055,
-   "top100_pct": 67.64515072804699,
-   "top10_noncust_pct": 45.66340827372084,
-   "top100_noncust_pct": 68.67086681701285,
-   "custody_pct": 1.493669930946251,
-   "custody_prl": 6045432.98610764,
+   "top10_pct": 45.02162266004111,
+   "top100_pct": 67.5032824006508,
+   "top10_noncust_pct": 45.71532510693699,
+   "top100_noncust_pct": 68.54338689729295,
+   "custody_pct": 1.5174396009941338,
+   "custody_prl": 6142389.208380352,
    "top_owners": [
     [
      "LAUNCH",
@@ -192,7 +192,7 @@
     ],
     [
      "BIG",
-     42802901.071528174
+     42988208.44011667
     ],
     [
      "M2",
@@ -245,11 +245,11 @@
     1,
     3,
     18,
-    176
+    175
    ],
    "n_addr": 4,
    "prl": 51038485.12695312,
-   "pct": 12.610287919883318,
+   "pct": 12.608744883948912,
    "confidence": "medium"
   },
   {
@@ -260,7 +260,7 @@
    ],
    "n_addr": 1,
    "prl": 25197190.56668759,
-   "pct": 6.225573251787206,
+   "pct": 6.224811470351221,
    "confidence": "medium"
   },
   {
@@ -273,14 +273,14 @@
    ],
    "n_addr": 3,
    "prl": 13979698.99194374,
-   "pct": 3.454021585539115,
+   "pct": 3.4535989401991696,
    "confidence": "medium"
   },
   {
    "key": "C389",
    "name": "Multi-address holder C389",
    "ranks": [
-    13,
+    12,
     20,
     25,
     26,
@@ -288,7 +288,7 @@
    ],
    "n_addr": 5,
    "prl": 13860009.99876941,
-   "pct": 3.4244495349381814,
+   "pct": 3.424030508130741,
    "confidence": "medium"
   },
   {
@@ -299,7 +299,7 @@
    ],
    "n_addr": 1,
    "prl": 6838665.99999778,
-   "pct": 1.6896572661469385,
+   "pct": 1.6894505141762413,
    "confidence": "medium"
   },
   {
@@ -310,7 +310,7 @@
    ],
    "n_addr": 1,
    "prl": 6717952.55,
-   "pct": 1.6598320987955164,
+   "pct": 1.6596289963295143,
    "confidence": "medium"
   },
   {
@@ -321,7 +321,7 @@
    ],
    "n_addr": 1,
    "prl": 6186108.90188103,
-   "pct": 1.5284273066184155,
+   "pct": 1.5282402832711117,
    "confidence": "medium"
   },
   {
@@ -332,7 +332,7 @@
    ],
    "n_addr": 1,
    "prl": 5815152.0122764,
-   "pct": 1.4367734659500844,
+   "pct": 1.43659765766548,
    "confidence": "medium"
   },
   {
@@ -346,7 +346,7 @@
    ],
    "n_addr": 4,
    "prl": 5535928.3964815,
-   "pct": 1.3677845416031682,
+   "pct": 1.3676171750282233,
    "confidence": "high"
   },
   {
@@ -361,17 +361,17 @@
    ],
    "n_addr": 5,
    "prl": 4767579.13378291,
-   "pct": 1.1779453369018806,
+   "pct": 1.1778011996708233,
    "confidence": "medium"
   }
  ],
  "auto_labeled": {
-  "n": 10,
-  "prl": 11304192.5209753,
-  "pct_of_top200": 3.982656894639894,
-  "refetched_this_run": 1
+  "n": 9,
+  "prl": 10321837.17207199,
+  "pct_of_top200": 3.64554849951665,
+  "refetched_this_run": 2
  },
  "labels_version": "2026-11-19",
  "page": "https://cursor.com/canvas/store-d6e96841-b799-4ef6-afb0-d1e20a534760/624fb5da-70ab-4b0a-9e31-93715dd2ac72",
- "big_cluster_prl": 42802901.07152818
+ "big_cluster_prl": 42988208.44011668
 }
