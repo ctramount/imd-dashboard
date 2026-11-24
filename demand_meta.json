@@ -2714,15 +2714,15 @@
       },
       "partner": {
         "jobs": 3548,
-        "share": 0.5354
+        "share": 0.5353
       },
       "unclear_bot": {
         "jobs": 196,
         "share": 0.0296
       },
       "organic": {
-        "jobs": 2643,
-        "share": 0.3988
+        "jobs": 2644,
+        "share": 0.3989
       }
     },
     "last_7d": {
@@ -2732,28 +2732,28 @@
       },
       "team_adjacent": {
         "jobs": 1,
-        "share": 0.0103
+        "share": 0.0102
       },
       "partner": {
         "jobs": 2,
-        "share": 0.0206
+        "share": 0.0204
       },
       "unclear_bot": {
         "jobs": 0,
         "share": 0.0
       },
       "organic": {
-        "jobs": 94,
-        "share": 0.9691
+        "jobs": 95,
+        "share": 0.9694
       }
     },
-    "total_paid_incl_swarm": 6627,
-    "total_paid_7d_incl_swarm": 97
+    "total_paid_incl_swarm": 6628,
+    "total_paid_7d_incl_swarm": 98
   },
   "counts": {
-    "cache_jobs": 7378,
-    "core_paid_non_oracle": 6491,
-    "core_ex_top": 4476,
+    "cache_jobs": 7379,
+    "core_paid_non_oracle": 6492,
+    "core_ex_top": 4477,
     "distinct_payers": 655,
     "simd_in_core": 431,
     "swarmbrain_excluded": 138,
@@ -2761,25 +2761,25 @@
     "oracle_skipped_in_cache": 0,
     "top_wallet_jobs": 2015,
     "top_wallet_share": 0.3104,
-    "paid_incl_swarm": 6627,
-    "organic_all": 2643,
-    "organic_share": 0.3988,
+    "paid_incl_swarm": 6628,
+    "organic_all": 2644,
+    "organic_share": 0.3989,
     "organic_payers": 520,
-    "organic_7d": 94,
-    "organic_share_7d": 0.9691,
+    "organic_7d": 95,
+    "organic_share_7d": 0.9694,
     "organic_payers_7d": 16,
     "new_organic_payers_week": 2
   },
   "last_7d": {
-    "paid_non_oracle": 97,
-    "ex_top": 97,
+    "paid_non_oracle": 98,
+    "ex_top": 98,
     "distinct_payers": 19,
     "top_share_pct": 0.0,
     "simd": 0,
-    "organic": 94,
-    "organic_share_pct": 96.91,
+    "organic": 95,
+    "organic_share_pct": 96.94,
     "organic_payers": 16,
-    "paid_incl_swarm": 97
+    "paid_incl_swarm": 98
   },
-  "as_of": "2026-11-24T13:12:06.116166+00:00"
+  "as_of": "2026-11-24T14:10:04.083577+00:00"
 }
