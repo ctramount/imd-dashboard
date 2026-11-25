@@ -1,16 +1,16 @@
 {
- "t": 1795619505825,
- "total_prl": 409496528.5663327,
- "raw_top10_pct": 29.87773212070516,
- "raw_top100_pct": 63.42282770853263,
+ "t": 1795626559189,
+ "total_prl": 409584357.17003345,
+ "raw_top10_pct": 29.884804385620388,
+ "raw_top100_pct": 63.640259022437604,
  "scenarios": {
   "low": {
-   "top10_pct": 29.542535434712864,
-   "top100_pct": 56.01503319215944,
-   "top10_noncust_pct": 33.96794526820858,
-   "top100_noncust_pct": 64.40596765545193,
-   "custody_pct": 13.02819407695398,
-   "custody_prl": 53350002.48001112,
+   "top10_pct": 29.54967957702375,
+   "top100_pct": 56.11660724929856,
+   "top10_noncust_pct": 34.042624970928856,
+   "top100_noncust_pct": 64.64897902697291,
+   "custody_pct": 13.197999266337163,
+   "custody_prl": 54056940.4543328,
    "top_owners": [
     [
      "LAUNCH",
@@ -25,12 +25,12 @@
      7273246.45195033
     ],
     [
-     "prl1pk3wf93ncahgncklymw283gs36qgwpa4ayw2sj7wstne9e22rc6usqed7q8",
-     6838665.99999778
+     "prl1pweex8p0250cseqxha5dqwkg9w2g8vy0lt40xcsmc0f85lezulmfqagu3sh",
+     6870160.68600746
     ],
     [
-     "prl1pweex8p0250cseqxha5dqwkg9w2g8vy0lt40xcsmc0f85lezulmfqagu3sh",
-     6814952.60027798
+     "prl1pk3wf93ncahgncklymw283gs36qgwpa4ayw2sj7wstne9e22rc6usqed7q8",
+     6838665.99999778
     ],
     [
      "prl1pzye599grkeksxcfxtkuy8l2fqzgt8l4fe8h0638vgdt943uj9dmsg0z7jz",
@@ -63,12 +63,12 @@
    ]
   },
   "central": {
-   "top10_pct": 34.48522415270846,
-   "top100_pct": 56.96092071905567,
-   "top10_noncust_pct": 39.65103838733844,
-   "top100_noncust_pct": 65.49354714958496,
-   "custody_pct": 13.02819407695398,
-   "custody_prl": 53350002.48001112,
+   "top10_pct": 34.49130841702101,
+   "top100_pct": 57.079922244251414,
+   "top10_noncust_pct": 39.73561453134211,
+   "top100_noncust_pct": 65.75876334854475,
+   "custody_pct": 13.197999266337163,
+   "custody_prl": 54056940.4543328,
    "top_owners": [
     [
      "LAUNCH",
@@ -87,12 +87,12 @@
      13860009.99876941
     ],
     [
-     "W7",
-     6838665.99999778
+     "prl1pweex8p0250cseqxha5dqwkg9w2g8vy0lt40xcsmc0f85lezulmfqagu3sh",
+     6870160.68600746
     ],
     [
-     "prl1pweex8p0250cseqxha5dqwkg9w2g8vy0lt40xcsmc0f85lezulmfqagu3sh",
-     6814952.60027798
+     "W7",
+     6838665.99999778
     ],
     [
      "W8",
@@ -121,12 +121,12 @@
    ]
   },
   "high": {
-   "top10_pct": 35.97592166301297,
-   "top100_pct": 60.50666547550048,
-   "top10_noncust_pct": 39.94289225381674,
-   "top100_noncust_pct": 67.1785768927328,
-   "custody_pct": 9.931605767543546,
-   "custody_prl": 40669580.8489845,
+   "top10_pct": 35.981686271853874,
+   "top100_pct": 60.633363931404055,
+   "top10_noncust_pct": 40.02128142205312,
+   "top100_noncust_pct": 67.44055581860479,
+   "custody_pct": 10.093617712033803,
+   "custody_prl": 41341879.22103429,
    "top_owners": [
     [
      "LAUNCH",
@@ -153,12 +153,12 @@
      7930050.72433802
     ],
     [
-     "W7",
-     6838665.99999778
+     "U140",
+     6870160.68600746
     ],
     [
-     "U140",
-     6814952.60027798
+     "W7",
+     6838665.99999778
     ],
     [
      "W8",
@@ -179,12 +179,12 @@
    ]
   },
   "stress": {
-   "top10_pct": 44.24189068382678,
-   "top100_pct": 68.7726344963143,
-   "top10_noncust_pct": 44.99128200980693,
-   "top100_noncust_pct": 69.93753985998089,
-   "custody_pct": 1.6656367467297362,
-   "custody_prl": 6820724.65638347,
+   "top10_pct": 44.245882792071356,
+   "top100_pct": 68.89756045162153,
+   "top10_noncust_pct": 45.07041043174836,
+   "top100_noncust_pct": 70.18147523224964,
+   "custody_pct": 1.8294211918163255,
+   "custody_prl": 7493023.0284332605,
    "top_owners": [
     [
      "LAUNCH",
@@ -211,12 +211,12 @@
      7930050.72433802
     ],
     [
-     "W7",
-     6838665.99999778
+     "U140",
+     6870160.68600746
     ],
     [
-     "U140",
-     6814952.60027798
+     "W7",
+     6838665.99999778
     ],
     [
      "W8",
@@ -249,7 +249,7 @@
    ],
    "n_addr": 4,
    "prl": 51038485.018042825,
-   "pct": 12.463716163048083,
+   "pct": 12.461043524876336,
    "confidence": "medium"
   },
   {
@@ -260,7 +260,7 @@
    ],
    "n_addr": 1,
    "prl": 25197190.56668759,
-   "pct": 6.153212251860641,
+   "pct": 6.1518927970746,
    "confidence": "medium"
   },
   {
@@ -268,19 +268,19 @@
    "name": "Multi-address holder C5",
    "ranks": [
     5,
-    17,
+    18,
     22
    ],
    "n_addr": 3,
    "prl": 13979698.99194374,
-   "pct": 3.4138748479473917,
+   "pct": 3.4131427988447944,
    "confidence": "medium"
   },
   {
    "key": "C389",
    "name": "Multi-address holder C389",
    "ranks": [
-    13,
+    14,
     21,
     26,
     27,
@@ -288,30 +288,30 @@
    ],
    "n_addr": 5,
    "prl": 13860009.99876941,
-   "pct": 3.384646518810301,
-   "confidence": "medium"
-  },
-  {
-   "key": "W7",
-   "name": "Holder (moved wallets)",
-   "ranks": [
-    7
-   ],
-   "n_addr": 1,
-   "prl": 6838665.99999778,
-   "pct": 1.6700180643631541,
+   "pct": 3.383920737240366,
    "confidence": "medium"
   },
   {
    "key": "prl1pweex8p025\u2026",
    "name": "Unknown single owner",
    "ranks": [
+    7
+   ],
+   "n_addr": 1,
+   "prl": 6870160.68600746,
+   "pct": 1.6773493825486612,
+   "confidence": "low"
+  },
+  {
+   "key": "W7",
+   "name": "Holder (moved wallets)",
+   "ranks": [
     8
    ],
    "n_addr": 1,
-   "prl": 6814952.60027798,
-   "pct": 1.6642271972701357,
-   "confidence": "low"
+   "prl": 6838665.99999778,
+   "pct": 1.6696599565590342,
+   "confidence": "medium"
   },
   {
    "key": "W8",
@@ -321,7 +321,7 @@
    ],
    "n_addr": 1,
    "prl": 6717952.55,
-   "pct": 1.6405395604988104,
+   "pct": 1.6401877738731931,
    "confidence": "medium"
   },
   {
@@ -332,7 +332,7 @@
    ],
    "n_addr": 1,
    "prl": 6186108.90188103,
-   "pct": 1.510662110748264,
+   "pct": 1.5103381741976414,
    "confidence": "medium"
   },
   {
@@ -343,7 +343,7 @@
    ],
    "n_addr": 1,
    "prl": 5815152.0122764,
-   "pct": 1.4200735797774724,
+   "pct": 1.4197690684418198,
    "confidence": "medium"
   },
   {
@@ -354,19 +354,19 @@
     67,
     73,
     78,
-    92
+    93
    ],
    "n_addr": 5,
    "prl": 4767579.13378291,
-   "pct": 1.164253858384206,
+   "pct": 1.164004203364562,
    "confidence": "medium"
   }
  ],
  "auto_labeled": {
-  "n": 18,
-  "prl": 17564316.50961593,
-  "pct_of_top200": 6.005385481786711,
-  "refetched_this_run": 4
+  "n": 19,
+  "prl": 18351484.04783896,
+  "pct_of_top200": 6.247941909201756,
+  "refetched_this_run": 2
  },
  "labels_version": "2026-11-19",
  "page": "https://cursor.com/canvas/store-d6e96841-b799-4ef6-afb0-d1e20a534760/624fb5da-70ab-4b0a-9e31-93715dd2ac72",
