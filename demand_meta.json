@@ -2714,15 +2714,15 @@
       },
       "partner": {
         "jobs": 3548,
-        "share": 0.5275
+        "share": 0.5274
       },
       "unclear_bot": {
         "jobs": 196,
         "share": 0.0291
       },
       "organic": {
-        "jobs": 2742,
-        "share": 0.4077
+        "jobs": 2743,
+        "share": 0.4078
       }
     },
     "last_7d": {
@@ -2736,50 +2736,50 @@
       },
       "partner": {
         "jobs": 1,
-        "share": 0.0076
+        "share": 0.0075
       },
       "unclear_bot": {
         "jobs": 0,
         "share": 0.0
       },
       "organic": {
-        "jobs": 131,
-        "share": 0.9924
+        "jobs": 132,
+        "share": 0.9925
       }
     },
-    "total_paid_incl_swarm": 6726,
-    "total_paid_7d_incl_swarm": 132
+    "total_paid_incl_swarm": 6727,
+    "total_paid_7d_incl_swarm": 133
   },
   "counts": {
-    "cache_jobs": 7571,
-    "core_paid_non_oracle": 6590,
-    "core_ex_top": 4575,
+    "cache_jobs": 7572,
+    "core_paid_non_oracle": 6591,
+    "core_ex_top": 4576,
     "distinct_payers": 661,
     "simd_in_core": 431,
     "swarmbrain_excluded": 138,
     "unpaid_or_missing_payer": 845,
     "oracle_skipped_in_cache": 0,
     "top_wallet_jobs": 2015,
-    "top_wallet_share": 0.3058,
-    "paid_incl_swarm": 6726,
-    "organic_all": 2742,
-    "organic_share": 0.4077,
+    "top_wallet_share": 0.3057,
+    "paid_incl_swarm": 6727,
+    "organic_all": 2743,
+    "organic_share": 0.4078,
     "organic_payers": 526,
-    "organic_7d": 131,
-    "organic_share_7d": 0.9924,
+    "organic_7d": 132,
+    "organic_share_7d": 0.9925,
     "organic_payers_7d": 19,
     "new_organic_payers_week": 8
   },
   "last_7d": {
-    "paid_non_oracle": 132,
-    "ex_top": 132,
+    "paid_non_oracle": 133,
+    "ex_top": 133,
     "distinct_payers": 20,
     "top_share_pct": 0.0,
     "simd": 0,
-    "organic": 131,
-    "organic_share_pct": 99.24,
+    "organic": 132,
+    "organic_share_pct": 99.25,
     "organic_payers": 19,
-    "paid_incl_swarm": 132
+    "paid_incl_swarm": 133
   },
-  "as_of": "2026-11-28T14:07:51.211625+00:00"
+  "as_of": "2026-11-28T15:18:57.801635+00:00"
 }
