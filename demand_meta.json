@@ -102,7 +102,7 @@
       "wallet": "0xca182aa19dde767ab809e0a4cc9fc1860be03d36",
       "abbr": "0xca18\u20263d36",
       "count": 109,
-      "share": 0.0166,
+      "share": 0.0165,
       "concentrated": false,
       "segment": "organic",
       "label": null
@@ -2714,15 +2714,15 @@
       },
       "partner": {
         "jobs": 3548,
-        "share": 0.5278
+        "share": 0.5277
       },
       "unclear_bot": {
         "jobs": 196,
         "share": 0.0292
       },
       "organic": {
-        "jobs": 2738,
-        "share": 0.4073
+        "jobs": 2739,
+        "share": 0.4074
       }
     },
     "last_7d": {
@@ -2743,43 +2743,43 @@
         "share": 0.0
       },
       "organic": {
-        "jobs": 127,
+        "jobs": 128,
         "share": 0.9922
       }
     },
-    "total_paid_incl_swarm": 6722,
-    "total_paid_7d_incl_swarm": 128
+    "total_paid_incl_swarm": 6723,
+    "total_paid_7d_incl_swarm": 129
   },
   "counts": {
-    "cache_jobs": 7567,
-    "core_paid_non_oracle": 6586,
-    "core_ex_top": 4571,
+    "cache_jobs": 7568,
+    "core_paid_non_oracle": 6587,
+    "core_ex_top": 4572,
     "distinct_payers": 661,
     "simd_in_core": 431,
     "swarmbrain_excluded": 138,
     "unpaid_or_missing_payer": 845,
     "oracle_skipped_in_cache": 0,
     "top_wallet_jobs": 2015,
-    "top_wallet_share": 0.306,
-    "paid_incl_swarm": 6722,
-    "organic_all": 2738,
-    "organic_share": 0.4073,
+    "top_wallet_share": 0.3059,
+    "paid_incl_swarm": 6723,
+    "organic_all": 2739,
+    "organic_share": 0.4074,
     "organic_payers": 526,
-    "organic_7d": 127,
+    "organic_7d": 128,
     "organic_share_7d": 0.9922,
     "organic_payers_7d": 19,
     "new_organic_payers_week": 8
   },
   "last_7d": {
-    "paid_non_oracle": 128,
-    "ex_top": 128,
+    "paid_non_oracle": 129,
+    "ex_top": 129,
     "distinct_payers": 20,
     "top_share_pct": 0.0,
     "simd": 0,
-    "organic": 127,
+    "organic": 128,
     "organic_share_pct": 99.22,
     "organic_payers": 19,
-    "paid_incl_swarm": 128
+    "paid_incl_swarm": 129
   },
-  "as_of": "2026-11-28T10:06:53.554583+00:00"
+  "as_of": "2026-11-28T11:09:13.908020+00:00"
 }
